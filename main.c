@@ -808,9 +808,11 @@ void __attribute__ ((weak)) DMA_Channel0_CallBack(void)
 {
     //bcm2835_spi_transfer_one_dma
     //polowa doszla - mozna szykowac odpowiedz
+    bool SPIOK = false;
     floatToInt16 ftoi16;
+    uint8_t command=DMA_RxBuffer[0]>>8;
     if (DMAINT0bits.HALFIF && DMA_RxBuffer[3]==0xf1) {
-        uint8_t command=DMA_RxBuffer[0]>>8;
+        SPIOK=true;
         uint8_t nr=DMA_RxBuffer[0]&0x00FF;
         if (command==1) {//get acc + gyro +temp sensor enable
             LSM6DS3TREnable=DMA_RxBuffer[1];
@@ -912,7 +914,7 @@ void __attribute__ ((weak)) DMA_Channel0_CallBack(void)
     }
     //set
     if (DMAINT0bits.DONEIF && DMA_RxBuffer[7]==0xf1) {
-        uint8_t command=DMA_RxBuffer[0]>>8;
+        SPIOK=true;
         uint8_t nr=DMA_RxBuffer[0]&0x00FF;
         if (command==50) { //Init Foc, set Encoder, zeroangle,
             mot[nr].encoderNr=DMA_RxBuffer[1];
@@ -1003,6 +1005,15 @@ void __attribute__ ((weak)) DMA_Channel0_CallBack(void)
             mot[nr].dir=direction;
             mot[nr].target=mot[nr].dir*speed;
         }        
+    }
+    if (SPIOK==false && DMAINT0bits.DONEIF) {
+        //SPI Synchronization if problem
+        for (int o=0; o<8; o++){
+            DMA_TxBuffer[o]=0;//command;//DMA_RxBuffer[o];
+        }
+        if (command==127) {
+            DMA_TxBuffer[4]=127;
+        }
     }
 }
 

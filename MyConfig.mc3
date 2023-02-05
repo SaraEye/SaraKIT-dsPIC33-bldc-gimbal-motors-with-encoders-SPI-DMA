@@ -96,8 +96,8 @@
    </usedClasses>
    <usedLibraries class="java.util.ArrayList">
       <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.mcu16.Mcu16PeripheralLibrary" version="1.170.0"/>
-      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.foundationservices.library.FoundationServicesLibrary" version="0.2.3"/>
       <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.boardsupportlibrary.BoardSuppportLibrary" version="1.12.0"/>
+      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.foundationservices.library.FoundationServicesLibrary" version="0.2.3"/>
    </usedLibraries>
    <tokenMap class="java.util.TreeMap">
       <entry>
@@ -42753,15 +42753,15 @@
          <value/>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="Pin Module" name="ICM1R%aux2"/>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="Pin Module" name="ICM1R%aux6"/>
          <value>%DESELECT%</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="Pin Module" name="ICM2R%aux3"/>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="Pin Module" name="ICM2R%aux4"/>
          <value>48</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="Pin Module" name="ICM3R%aux4"/>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="Pin Module" name="ICM3R%aux5"/>
          <value>34</value>
       </entry>
       <entry>
@@ -52814,7 +52814,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="SPI1" registerAlias="SPICON1H"/>
-         <value>12288</value>
+         <value>12352</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="SPI1" registerAlias="SPICON1L"/>
@@ -52882,7 +52882,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="SPI1" registerAlias="SPICON1H" settingAlias="FRMSYNC"/>
-         <value>disabled</value>
+         <value>enabled</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="SPI1" registerAlias="SPICON1H" settingAlias="FRMSYPW"/>
@@ -54307,20 +54307,20 @@
    </tokenMap>
    <generatedFileHashHistoryMap class="java.util.HashMap">
       <entry>
-         <file>mcc_generated_files\interrupt_manager.h</file>
-         <hash>8f9b52550a3cefecde8a727cf7b55fc4f742a89d0ed534ca1d1a78db33770f68</hash>
-      </entry>
-      <entry>
          <file>mcc_generated_files\dma.c</file>
          <hash>b3e64f30890548a7216272b30aea04c040cfac8812b66ebb76a33d9efd9b8894</hash>
       </entry>
       <entry>
-         <file>mcc_generated_files\sccp3_capture.h</file>
-         <hash>4f82cdcdcff91dd9e4feeb23ad88ef3cbf8612573013cfc9e57ba5ac4c9bd930</hash>
-      </entry>
-      <entry>
          <file>mcc_generated_files\pwm_module_features.h</file>
          <hash>e4fc74865f2cda56d54a786fe959d1b498148f30da324e89443124dde62c5050</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files\interrupt_manager.h</file>
+         <hash>8f9b52550a3cefecde8a727cf7b55fc4f742a89d0ed534ca1d1a78db33770f68</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files\sccp3_capture.h</file>
+         <hash>4f82cdcdcff91dd9e4feeb23ad88ef3cbf8612573013cfc9e57ba5ac4c9bd930</hash>
       </entry>
       <entry>
          <file>mcc_generated_files\i2c1.c</file>
@@ -54343,40 +54343,40 @@
          <hash>c665e609f78a54c83ab2dee77aa273aa3d2b8642baedb604bacd37670dedfc7f</hash>
       </entry>
       <entry>
-         <file>mcc_generated_files\adc_module_features.h</file>
-         <hash>85efa036a9e483d6a1d2699004df0b3ad0f6dde4dbbb925be4c0c852c02a1a8a</hash>
-      </entry>
-      <entry>
          <file>mcc_generated_files\dma.h</file>
          <hash>f1b53554035989d0a23551ed390268cd554c242d3fc58bd0c063d7b4e4cdcb5d</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files\adc_module_features.h</file>
+         <hash>85efa036a9e483d6a1d2699004df0b3ad0f6dde4dbbb925be4c0c852c02a1a8a</hash>
       </entry>
       <entry>
          <file>mcc_generated_files\system_types.h</file>
          <hash>8562eba32ed18ee9616494785808981d587a9756ccfb08f5c82c31a2e452722f</hash>
       </entry>
       <entry>
-         <file>mcc_generated_files\spi1.c</file>
-         <hash>8d4b4e4095c4c9b00ae9b97de7b430101c112c45d55db75d6f0144a6dbc7d17d</hash>
-      </entry>
-      <entry>
          <file>mcc_generated_files\system.h</file>
          <hash>4c7a9f33d91746586d15f7fe272ad662fa13a795e326639c307468b23f8b9032</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files\spi1.c</file>
+         <hash>20275eb3a61b80d7f75e27e10d1350078c435034675bcd4130f55cd0274df61d</hash>
       </entry>
       <entry>
          <file>mcc_generated_files\delay.c</file>
          <hash>4a6b8bbd5d2fbe5f20e79db8d915e50e2cd43920940679b40db90f3789cbccd5</hash>
       </entry>
       <entry>
-         <file>mcc_generated_files\delay.h</file>
-         <hash>dda77102dba9adc0f9aef1c8c542cfee6d6cccc96446f4cd1bf07be2150a4d95</hash>
+         <file>mcc_generated_files\system.c</file>
+         <hash>5b5913f03369a6cf3c01556933b0e2b5e443a343381464e5a19e97ca61ac3707</hash>
       </entry>
       <entry>
          <file>mcc_generated_files\sccp5_capture.c</file>
          <hash>6fe854711e744238181b5113ddd6806d38717c1b9d2064a019020b9faf9088c3</hash>
       </entry>
       <entry>
-         <file>mcc_generated_files\system.c</file>
-         <hash>c64d5c6c0f077edbc18ba29da360e082ee20ea5bff8250a0e9bee41e7d772c84</hash>
+         <file>mcc_generated_files\delay.h</file>
+         <hash>dda77102dba9adc0f9aef1c8c542cfee6d6cccc96446f4cd1bf07be2150a4d95</hash>
       </entry>
       <entry>
          <file>mcc_generated_files\clock.h</file>
@@ -54387,24 +54387,24 @@
          <hash>13d4874d789b563dd4499efacd71882cbc38f8459da91ac17f13fa76079be93b</hash>
       </entry>
       <entry>
-         <file>mcc_generated_files\sccp3_capture.c</file>
-         <hash>3a920274102de6d0e474274a08d4057e59cbf4fe1c3a4549b5dd39701552c996</hash>
-      </entry>
-      <entry>
          <file>mcc_generated_files\mcc.c</file>
          <hash>7125f79658f30c70cc99cc2003c0f225e6afb6d4d8bd25f0a56836ff03a345a9</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files\sccp3_capture.c</file>
+         <hash>3a920274102de6d0e474274a08d4057e59cbf4fe1c3a4549b5dd39701552c996</hash>
       </entry>
       <entry>
          <file>mcc_generated_files\reset.h</file>
          <hash>e58b5fdcff0a3daa4c2873ec7ff00e244463ddcbd65a7de1e0a651dcc8a80b8f</hash>
       </entry>
       <entry>
-         <file>mcc_generated_files\pwm.c</file>
-         <hash>96d40c6c17db7c9aadf6cd806d4c6499cb5156801b17b77264fc0acae8991802</hash>
+         <file>mcc_generated_files\mcc.h</file>
+         <hash>a2814cef8e30b1739c8da555dfdb09a40954e0aec084da1e032a06e26388d328</hash>
       </entry>
       <entry>
-         <file>mcc_generated_files\mcc.h</file>
-         <hash>28c6bc9ae4cd071fa6354802eb17d326331980e09ad1c6365166f765450258b8</hash>
+         <file>mcc_generated_files\pwm.c</file>
+         <hash>96d40c6c17db7c9aadf6cd806d4c6499cb5156801b17b77264fc0acae8991802</hash>
       </entry>
       <entry>
          <file>mcc_generated_files\sccp2_capture.c</file>
@@ -54419,24 +54419,24 @@
          <hash>0014976b3c06d847b95298c36965d63480b582d6a54bae39de4113e73c7815fb</hash>
       </entry>
       <entry>
-         <file>mcc_generated_files\tmr1.h</file>
-         <hash>6e6e9d3b926c3df3a4e0fbf657309185b3e8f70bcaf4ef27aa4c1ebfc01d28a2</hash>
-      </entry>
-      <entry>
          <file>mcc_generated_files\sccp4_capture.h</file>
          <hash>27da4597ecf61587c6376c057375ae2d6116f65f86508897841de30b00a2256c</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files\tmr1.h</file>
+         <hash>6e6e9d3b926c3df3a4e0fbf657309185b3e8f70bcaf4ef27aa4c1ebfc01d28a2</hash>
       </entry>
       <entry>
          <file>mcc_generated_files\clock.c</file>
          <hash>c9232402adaf3e025b66d293ff83dcf33f4b689122802ffb2868697c811d559f</hash>
       </entry>
       <entry>
-         <file>mcc_generated_files\adc1.c</file>
-         <hash>033d3cd5c27a7246932488f398730c21f82982d572b9b2f246c284ab5dbccab0</hash>
-      </entry>
-      <entry>
          <file>main.c</file>
          <hash>4c4c0173b78ebe7e3fe667a84a256e3a515c657558bc18c88fcfc835938e3a46</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files\adc1.c</file>
+         <hash>033d3cd5c27a7246932488f398730c21f82982d572b9b2f246c284ab5dbccab0</hash>
       </entry>
       <entry>
          <file>mcc_generated_files\pin_manager.h</file>
@@ -54452,7 +54452,7 @@
       </entry>
       <entry>
          <file>mcc_generated_files\pin_manager.c</file>
-         <hash>684c9c9e7e3564b5150855e4c776d6c611696606dee8d737c02da66858a6b286</hash>
+         <hash>172e5be6cace6394b6e042fb359e190a59d103892a207b5f953af9f6c0eda5f3</hash>
       </entry>
       <entry>
          <file>mcc_generated_files\traps.c</file>
@@ -54467,12 +54467,12 @@
          <hash>7033838aef5d3c812cec5abcb13d3637495f6cf393991a15a830217dfbd8343f</hash>
       </entry>
       <entry>
-         <file>mcc_generated_files\adc1.h</file>
-         <hash>b43978df6e11a3e8bd59afdb05d1cae066b8654aa1e76ddb5351ac5a9384e298</hash>
-      </entry>
-      <entry>
          <file>mcc_generated_files\sccp4_capture.c</file>
          <hash>94477d3ea0373073bb905ee46562fc3f37074cb71d172cbdd38720ed2d3618b4</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files\adc1.h</file>
+         <hash>b43978df6e11a3e8bd59afdb05d1cae066b8654aa1e76ddb5351ac5a9384e298</hash>
       </entry>
       <entry>
          <file>mcc_generated_files\interrupt_manager.c</file>
