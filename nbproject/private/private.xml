@@ -5,17 +5,17 @@
             <url>main.c</url>
             <bookmark id="19">
                 <name/>
-                <line>651</line>
+                <line>654</line>
                 <key/>
             </bookmark>
             <bookmark id="17">
                 <name/>
-                <line>744</line>
+                <line>747</line>
                 <key/>
             </bookmark>
             <bookmark id="18">
                 <name/>
-                <line>927</line>
+                <line>930</line>
                 <key/>
             </bookmark>
         </file>
@@ -25,6 +25,7 @@
             <file>file:/D:/_SaraKIT/_PIC/SaraKIT/main.c</file>
             <file>file:/D:/_SaraKIT/_PIC/SaraKIT/mcc_generated_files/spi1.c</file>
             <file>file:/D:/_SaraKIT/_PIC/SaraKIT/mcc_generated_files/dma.c</file>
+            <file>file:/D:/_SaraKIT/_PIC/SaraKIT/README.md</file>
         </group>
     </open-files>
 </project-private>

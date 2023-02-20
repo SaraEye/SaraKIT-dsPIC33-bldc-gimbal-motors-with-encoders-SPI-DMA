@@ -22,6 +22,8 @@
 
 //raspi-gpio set 17 ip pn //(before PIC programming)
 
+#define SaraKIT
+
 #include "mcc_generated_files/system.h"
 #include "mcc_generated_files/i2c1.h"
 #include "mcc_generated_files/pin_manager.h"
@@ -34,6 +36,7 @@
 #include "mcc_generated_files/dma.h"
 #include <stdio.h>
 #include <math.h>
+
 //#include <p33CK32MP503.h>
 #ifdef SaraKIT
 #include "LSM6DS3TR.h"
@@ -966,11 +969,13 @@ void __attribute__ ((weak)) DMA_Channel0_CallBack(void)
             mot[nr].maxTorque=(float)torque/10.0f;
             mot[nr].maxVelocity=speed;
             mot[nr].P_angle.limit=speed;
-            mot[nr].PID_velocity.limit=10;
-            if (mot[nr].maxVelocity<10) 
-                mot[nr].PID_velocity.limit=mot[nr].maxVelocity;
             if (mot[nr].isEncoder)
                 mot[nr].PID_velocity.limit=mot[nr].maxTorque;
+            else {           
+                mot[nr].PID_velocity.limit=10;
+                if (mot[nr].maxVelocity<10) 
+                    mot[nr].PID_velocity.limit=mot[nr].maxVelocity;
+            }
             mot[nr].dir=angle<0?-1.0:1.0;            
             if (command==51)
                 mot[nr].target=angle;
@@ -1063,8 +1068,8 @@ int main(void)
     PWM_Enable();   
     
     SCCP1_TMR_Start(); //every 100us
-    motorsInit();
-    
+    motorsInit();              
+            
     //glowna petla programu interpretujaca dane odczytane po SPI (od RPI)
     while (1) {
 
@@ -1082,7 +1087,7 @@ int main(void)
 
         if (newTmr) {
             newTmr = false;
-            #ifdef SaraKIT
+            #ifdef SaraKIT //dupa pamietac o tym
             lsm6ds3tr_i2c_check();
             #endif
             for (int m=0;m<2;m++) {

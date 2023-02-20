@@ -3,3 +3,5 @@ SaraKIT - using dsPIC33 with Raspberry Pi 4 to control BLDC motors (gimbal motor
 
 https://sarakit.saraai.com
 
+DMA note:
+https://forums.raspberrypi.com/viewtopic.php?p=609380#p609380
