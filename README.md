@@ -63,45 +63,12 @@ Example of use, demonstration of the speed and power of BLDC motors<br>
 <br>
 
 
-|  |  |
-| --- | --- |
-| ![shotpopup2.jpg](https://allplayershare.com/news/shotpopup2.jpg) | <img src="https://saraai.com/_SaraKIT/play_button.png" alt="play_button.png" style="width: 20%;"> |
-
-
-
-<table class="tg">
-<thead>
-  <tr>
-    <td>
-      <img src="https://allplayershare.com/news/shotpopup2.jpg">
-      <img style="position: absolute; left: 100px; top: 0px; margin: 20px;" src="https://saraai.com/_SaraKIT/play_button.png">
-    </td>
-	<td> . </td>
-  </tr>
-  <tr>
-    <td class="tg-0pky">1</td>
-    <td class="tg-0pky">RPi_CM4 G2/I2C SDA</td>
-  </tr>
-	
-</thead>
-</table>
-		
-
-
-
 <div>
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=hYSFt0cGJSE
 " target="_blank"><img src="http://img.youtube.com/vi/hYSFt0cGJSE/0.jpg"
 alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" />
-
-<div style="position: absolute; left: 0px; top: 10px; margin: 20px;">
-  <a href="https://allplayershare.com/pl/?pr=4" target="_blank" style="color: white; font-size: 14px; text-decoration: none;">zobacz więcej...</a>
-  <img src="https://saraai.com/_SaraKIT/play_button.png">
-</div>
 </div>
 
-
-</a>
 
 <video width="720" height="360" autoplay loop muted>
   <source src="ALLPlayerShare_Promo2.mp4" type="video/mp4">
@@ -111,19 +78,9 @@ alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" />
 
 test1
 
-[![IMAGE ALT TEXT HERE](//img.youtube.com/vi/hYSFt0cGJSE/0.jpg)](//www.youtube.com/watch?v=hYSFt0cGJSE)
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/hYSFt0cGJSE/0.jpg)](https://www.youtube.com/watch?v=hYSFt0cGJSE)
 
 test3b
-
-<figure class="video_container">
-  <iframe src="//www.youtube.com/embed/hYSFt0cGJSE" frameborder="0" allowfullscreen="true"> </iframe>
-</figure>
-
-test3c
-
-
-[![Everything Is AWESOME](//i.imgur.com/Ot5DWAW.png)](//youtu.be/StTqXEQ2l-Y?t=35s "Everything Is AWESOME")
-
 
 test4
 
@@ -132,25 +89,8 @@ test4
 </div>
 
 
-[![](https://markdown-videos.deta.dev/youtube/{hYSFt0cGJSE})](https://youtu.be/{hYSFt0cGJSE})
+<iframe width="560" height="315" src="https://www.youtube.com/embed/MUQfKFzIOeU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-
-[![img_tag](https://img.youtube.com/vi/hYSFt0cGJSE/0.jpg)](https://saraai.com/_SaraKIT/video/SaraKIT_SelfBalancingRobot.mp4)
-
-<iframe width="560" height="315"
-src="https://www.youtube.com/embed/MUQfKFzIOeU" 
-frameborder="0" 
-allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
-allowfullscreen></iframe>
-
-
-[![Everything Is AWESOME](https://yt-embed.herokuapp.com/embed?v=StTqXEQ2l-Y)](https://www.youtube.com/watch?v=StTqXEQ2l-Y "Everything Is AWESOME")
-
-
-<video width="908" height="242" autoplay loop muted>
-  <source src="https://allplayershare.com/news/ALLPlayerSharePromo908.mp4" type="video/mp4">
-  <img src="https://allplayershare.com/news/shotpopup.jpg">
-</video>
 
 
 This movie showcases one of the applications of SaraKIT, an extension kit for Raspberry Pi 4 in CM4 version.
