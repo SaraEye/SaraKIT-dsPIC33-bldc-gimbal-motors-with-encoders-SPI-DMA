@@ -57,32 +57,15 @@ Code examples in Pascal and C++ is created for Raspberry Pi 4 in CM4 version. Sa
 
 ## Self Balancing Robot
 Example of use, demonstration of the speed and power of BLDC motors<br>
+
 <video src='https://saraai.com/_SaraKIT/video/SaraKIT_SelfBalancingRobot.mp4' width=75%></video>
+
 <br>
 
-https://saraai.com/_SaraKIT/video/SaraKIT_SelfBalancingRobot.mp4?width=200&height=200
 
 test1
 
-<figure class="video_container">
-  <video controls="true" allowfullscreen="true" poster="path/to/poster_image.png">
-    <source src="https://saraai.com/_SaraKIT/video/SaraKIT_SelfBalancingRobot.mp4" type="video/mp4">
-  </video>
-</figure>
-
-test2
-
-<figure class="video_container">
-  <video controls="true" allowfullscreen="true">
-    <source src="//saraai.com/_SaraKIT/video/SaraKIT_SelfBalancingRobot.mp4" type="video/mp4">
-  </video>
-</figure>
-
-test3
-
-<figure class="video_container">
-  <iframe src="//saraai.com/_SaraKIT/video/SaraKIT_SelfBalancingRobot.mp4" frameborder="0" allowfullscreen="true"> </iframe>
-</figure>
+[![IMAGE ALT TEXT HERE](//img.youtube.com/vi/hYSFt0cGJSE/0.jpg)](//www.youtube.com/watch?v=hYSFt0cGJSE)
 
 test3b
 
@@ -92,16 +75,9 @@ test3b
 
 test3c
 
-[![IMAGE ALT TEXT HERE](//img.youtube.com/vi/hYSFt0cGJSE/0.jpg)](//www.youtube.com/watch?v=hYSFt0cGJSE)
-
 
 [![Everything Is AWESOME](//i.imgur.com/Ot5DWAW.png)](//youtu.be/StTqXEQ2l-Y?t=35s "Everything Is AWESOME")
 
-<!-- blank line -->
-<figure class="video_container">
-  <iframe src="//www.youtube.com/embed/hYSFt0cGJSE" frameborder="0" allowfullscreen="true"> </iframe>
-</figure>
-<!-- blank line -->
 
 test4
 
@@ -109,6 +85,11 @@ test4
   <a href="https://www.youtube.com/watch?v=hYSFt0cGJSE"><img src="https://img.youtube.com/vi/hYSFt0cGJSE/0.jpg" alt="IMAGE ALT TEXT"></a>
 </div>
 
+
+[![](https://markdown-videos.deta.dev/youtube/{hYSFt0cGJSE})](https://youtu.be/{hYSFt0cGJSE})
+
+
+[![img_tag](https://img.youtube.com/vi/hYSFt0cGJSE/0.jpg)](https://saraai.com/_SaraKIT/video/SaraKIT_SelfBalancingRobot.mp4)
 
 <iframe width="560" height="315"
 src="https://www.youtube.com/embed/MUQfKFzIOeU" 
