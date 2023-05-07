@@ -87,14 +87,14 @@ test3
 test3b
 
 <figure class="video_container">
-  <iframe src="//www.youtube.com/embed/hYSFt0cGJSE?enablejsapi=1&rel=0&amp;controls=1&amp;showinfo=0" frameborder="0" allowfullscreen="true"> </iframe>
+  <iframe src="//www.youtube.com/embed/hYSFt0cGJSE" frameborder="0" allowfullscreen="true"> </iframe>
 </figure>
 
 test3c
 
 <!-- blank line -->
 <figure class="video_container">
-  <iframe src="//www.youtube.com/embed/hYSFt0cGJSE?enablejsapi=1&rel=0&amp;controls=1&amp;showinfo=0" frameborder="0" allowfullscreen="true"> </iframe>
+  <iframe src="//www.youtube.com/embed/hYSFt0cGJSE" frameborder="0" allowfullscreen="true"> </iframe>
 </figure>
 <!-- blank line -->
 
