@@ -74,14 +74,14 @@ test2
 
 <figure class="video_container">
   <video controls="true" allowfullscreen="true">
-    <source src="https://saraai.com/_SaraKIT/video/SaraKIT_SelfBalancingRobot.mp4" type="video/mp4">
+    <source src="//saraai.com/_SaraKIT/video/SaraKIT_SelfBalancingRobot.mp4" type="video/mp4">
   </video>
 </figure>
 
 test3
 
 <figure class="video_container">
-  <iframe src="https://saraai.com/_SaraKIT/video/SaraKIT_SelfBalancingRobot.mp4" frameborder="0" allowfullscreen="true"> </iframe>
+  <iframe src="//saraai.com/_SaraKIT/video/SaraKIT_SelfBalancingRobot.mp4" frameborder="0" allowfullscreen="true"> </iframe>
 </figure>
 
 test3b
@@ -92,6 +92,11 @@ test3b
 
 test3c
 
+[![IMAGE ALT TEXT HERE](//img.youtube.com/vi/hYSFt0cGJSE/0.jpg)](//www.youtube.com/watch?v=hYSFt0cGJSE)
+
+
+[![Everything Is AWESOME](//i.imgur.com/Ot5DWAW.png)](//youtu.be/StTqXEQ2l-Y?t=35s "Everything Is AWESOME")
+
 <!-- blank line -->
 <figure class="video_container">
   <iframe src="//www.youtube.com/embed/hYSFt0cGJSE" frameborder="0" allowfullscreen="true"> </iframe>
@@ -99,6 +104,16 @@ test3c
 <!-- blank line -->
 
 test4
+
+<iframe width="560" height="315"
+src="https://www.youtube.com/embed/MUQfKFzIOeU" 
+frameborder="0" 
+allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+allowfullscreen></iframe>
+
+
+[![Everything Is AWESOME](https://yt-embed.herokuapp.com/embed?v=StTqXEQ2l-Y)](https://www.youtube.com/watch?v=StTqXEQ2l-Y "Everything Is AWESOME")
+
 
 <video width="908" height="242" autoplay loop muted>
   <source src="https://allplayershare.com/news/ALLPlayerSharePromo908.mp4" type="video/mp4">
