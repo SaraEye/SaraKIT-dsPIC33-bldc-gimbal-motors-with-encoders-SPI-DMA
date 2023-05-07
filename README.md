@@ -62,7 +62,6 @@ Example of use, demonstration of the speed and power of BLDC motors<br>
 
 <br>
 
-    <table width="720" cellspacing="0" cellpadding="0" border="0">
         <tr>
           <td>
 
@@ -82,7 +81,6 @@ Example of use, demonstration of the speed and power of BLDC motors<br>
 
           </td>
 		</tr>
-    </table>
 
 
 
