@@ -64,8 +64,8 @@ Example of use, demonstration of the speed and power of BLDC motors<br>
 
 
 <div style="position: relative; width: 100%;">
-  <img src="https://allplayershare.com/news/shotpopup2.jpg" alt="shotpopup2.jpg" style="width: 100%;">
-  <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background-image: url('https://saraai.com/_SaraKIT/play_button.png'); background-position: center center; background-repeat: no-repeat; width: 20%; height: auto;"></div>
+  <img src="https://saraai.com/_SaraKIT/play_button.png" alt="shotpopup2.jpg" style="width: 100%;">
+  <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background-image: url('https://allplayershare.com/news/shotpopup2.jpg'); background-position: center center; background-repeat: no-repeat; width: 20%; height: auto;"></div>
 </div>
 
 
