@@ -62,6 +62,8 @@ Example of use, demonstration of the speed and power of BLDC motors<br>
 
 <br>
 
+<table class="tg">
+<thead>
         <tr>
           <td>
 
@@ -81,6 +83,9 @@ Example of use, demonstration of the speed and power of BLDC motors<br>
 
           </td>
 		</tr>
+</thead>
+</table>
+		
 
 
 
@@ -213,14 +218,6 @@ For mobile devices, we recommend a simple connection to the PowerBank (PD2.0 PD3
 
 ## SaraKit Mainboard peripherials
 
-<style type="text/css">
-.tg  {border-collapse:collapse;border-spacing:0;}
-.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
-  overflow:hidden;padding:10px 5px;word-break:normal;}
-.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
-  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
-.tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
-</style>
 <table class="tg">
 <thead>
   <tr>
