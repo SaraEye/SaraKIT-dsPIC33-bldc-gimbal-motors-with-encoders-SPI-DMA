@@ -70,12 +70,6 @@ alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" />
 </div>
 
 
-<video width="720" height="360" autoplay loop muted>
-  <source src="ALLPlayerShare_Promo2.mp4" type="video/mp4">
-  <img src="http://img.youtube.com/vi/hYSFt0cGJSE/0.jpg">
-</video>
-
-
 test1
 
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/hYSFt0cGJSE/0.jpg)](https://www.youtube.com/watch?v=hYSFt0cGJSE)
@@ -89,8 +83,8 @@ test4
 </div>
 
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/MUQfKFzIOeU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
+<iframe width="560" height="315" src="https://www.youtube.com/embed/MUQfKFzIOeU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
 
 
 This movie showcases one of the applications of SaraKIT, an extension kit for Raspberry Pi 4 in CM4 version.
