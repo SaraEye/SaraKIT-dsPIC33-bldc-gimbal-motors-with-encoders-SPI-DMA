@@ -5,27 +5,22 @@
             <url>main.c</url>
             <bookmark id="19">
                 <name/>
-                <line>654</line>
+                <line>677</line>
                 <key/>
             </bookmark>
             <bookmark id="17">
                 <name/>
-                <line>747</line>
+                <line>770</line>
                 <key/>
             </bookmark>
             <bookmark id="18">
                 <name/>
-                <line>930</line>
+                <line>953</line>
                 <key/>
             </bookmark>
         </file>
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/D:/_SaraKIT/_PIC/SaraKIT/main.c</file>
-            <file>file:/D:/_SaraKIT/_PIC/SaraKIT/mcc_generated_files/spi1.c</file>
-            <file>file:/D:/_SaraKIT/_PIC/SaraKIT/mcc_generated_files/dma.c</file>
-            <file>file:/D:/_SaraKIT/_PIC/SaraKIT/README.md</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>

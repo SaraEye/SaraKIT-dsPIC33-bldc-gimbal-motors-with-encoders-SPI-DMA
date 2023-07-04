@@ -58,8 +58,6 @@
     extern "C" {
 
 #endif
-volatile static uint16_t enc1=0;
-void getEnc1Val(uint16_t *enc);
 /**
   Section: Interface Routines
 */

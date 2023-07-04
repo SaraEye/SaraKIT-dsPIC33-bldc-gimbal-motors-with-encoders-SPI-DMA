@@ -124,20 +124,18 @@
 #include "clock.h"
 #include "system.h"
 #include "system_types.h"
-#include "sccp2_capture.h"
-#include "sccp3_capture.h"
-#include "i2c1.h"
-#include "sccp1_tmr.h"
-#include "sccp4_capture.h"
 #include "interrupt_manager.h"
 #include "traps.h"
-#include "sccp5_capture.h"
+#include "adc1.h"
+#include "sccp1_tmr.h"
+#include "i2c1.h"
+#include "sccp2_capture.h"
 #include "pwm.h"
 #include "tmr1.h"
-#include "spi1.h"
 #include "delay.h"
+#include "sccp3_capture.h"
 #include "dma.h"
-#include "adc1.h"
+#include "spi1.h"
 
 void SYSTEM_Initialize(void)
 {
@@ -146,8 +144,6 @@ void SYSTEM_Initialize(void)
     INTERRUPT_Initialize();
     SCCP3_CAPTURE_Initialize();
     SCCP2_CAPTURE_Initialize();
-    SCCP4_CAPTURE_Initialize();
-    SCCP5_CAPTURE_Initialize();
     SCCP1_TMR_Initialize();
     SPI1_Initialize();
     //PWM_Initialize();

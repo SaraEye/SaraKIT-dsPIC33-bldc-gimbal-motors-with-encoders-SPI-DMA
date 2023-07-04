@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=SaraKIT
+PROJECTNAME=SaraKIT-dsPIC33-bldc-gimbal-motors-with-encoders-SPI-DMA
 
 # Active Configuration
 DEFAULTCONF=default

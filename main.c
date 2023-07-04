@@ -101,8 +101,8 @@ struct DQVoltage_s
 // velocity calculation variables
 volatile struct Encoder {
     bool enabled;
-    volatile float angle;
-    volatile float velocity;
+    float angle;
+    float velocity;
     struct LowPassFilter LPF_velocity;
     struct LowPassFilter LPF_angle;
     int8_t encoderDirection;//if encoderDirection == Direction::CCW then direction will be flipped to CW 0 (auto) or 1 or -1
@@ -116,8 +116,14 @@ volatile struct Encoder {
     uint16_t encoderMaxRawAngle;//PWM max Range
     float encoderRawAngle;
     float min_elapsed_time;
-    volatile float zeroAngle;
-    volatile int16_t motorNr;
+    float zeroAngle;
+    int16_t motorNr;
+    uint32_t t1;
+    uint32_t t2;
+    uint32_t t3;
+    uint32_t w;
+    uint32_t t;
+    uint32_t rawWidth;
 };
 //todo - dokonczyc opisy
 volatile struct motor{
@@ -179,19 +185,46 @@ volatile uint8_t i2cBufferTX[8] = {0};
 volatile uint8_t i2cBufferRX[8] = {0};
 extern bool LSM6DS3TREnable;
 
-volatile uint64_t tmr2=0; //every 100us
-volatile bool newTmr = false; //new timer event every 250us
-
 uint64_t _micros(){  
-    return tmr2*100;
+    //volatile uint64_t tmr=0; //every 50.000.000/s = 50.000/ms = 50/us
+    return SCCP1_TMR_Counter32BitGet()/50;
 }
 
-void timer_interrupt(void){
-    newTmr=true; //every 250us
+void SCCP3_CAPTURE_CallBack(void)
+{
+    if (CCP3CON1Lbits.CCPMOD0) {
+        //t3=SCCP1_TMR_Counter32BitGet();
+        //t=t3-t1;
+        //float e;
+        //e=((float)t/(float)w);
+        encoder[0].t1=SCCP1_TMR_Counter32BitGet();
+        CCP3CON1Lbits.CCPMOD=2;
+    } else {
+        encoder[0].t2=SCCP1_TMR_Counter32BitGet();
+        if (encoder[0].t2>encoder[0].t1) {
+            encoder[0].rawWidth=encoder[0].t2-encoder[0].t1;
+        }
+        CCP3CON1Lbits.CCPMOD=1;
+    }
 }
 
-void SCCP1_TMR_Timer32CallBack(){
-    tmr2++;
+void SCCP2_CAPTURE_CallBack(void)
+{
+    //PWM - Pulse Width or Duty Cycle
+    if (CCP2CON1Lbits.CCPMOD0) {
+        //t3=SCCP1_TMR_Counter32BitGet();
+        //t=t3-t1; //period
+        //float e;
+        //e=((float)t/(float)w);
+        encoder[1].t1=SCCP1_TMR_Counter32BitGet();
+        CCP2CON1Lbits.CCPMOD=2;
+    } else {
+        encoder[1].t2=SCCP1_TMR_Counter32BitGet();
+        if (encoder[1].t2>encoder[1].t1) {
+            encoder[1].rawWidth=encoder[1].t2-encoder[1].t1; //width of a pulse
+        }
+        CCP2CON1Lbits.CCPMOD=1;
+    }
 }
 
 static void Reset(void){
@@ -322,13 +355,7 @@ float _electricalAngle(float currentPosition, int pole_pairs){
 
 /*--ENCODER-------------------------------*/
 float encoder_getAngle(uint16_t n){
-    uint16_t encVal=0;
-    if (n==0)
-        getEnc1Val(&encVal);
-    else 
-        getEnc2Val(&encVal);            
-
-    return ( (float) (encVal) / encoder[n].encoderRawAngle) * _2PI;
+    return ( (float) (encoder[n].rawWidth) / encoder[n].encoderRawAngle) * _2PI;
 }
 
 float encoder_getVelocity(uint16_t n) {
@@ -354,8 +381,7 @@ void encoderUpdate(uint16_t n) {
     float d_angle = val - encoder[n].angle_prev;
     // if overflow happened track it as full rotation
     if (abs(d_angle) > (0.8f*_2PI) ) encoder[n].full_rotations += ( d_angle > 0 ) ? -1 : 1;
-    encoder[n].angle_prev = val;
-    
+    encoder[n].angle_prev = val;   
     encoder[n].angle    =LowPassFilterF(&encoder[n].LPF_angle,encoder_getLastAngle(n));
     encoder[n].velocity =LowPassFilterF(&encoder[n].LPF_velocity,encoder_getVelocity(n));
 }  
@@ -533,6 +559,7 @@ int alignSensor(uint16_t m) {
       Delay(1);
     }
     // take and angle in the middle
+    Delay(50);
     encoderUpdate(mot[m].encoderNr);
     float mid_angle = encoder_getLastAngle(mot[m].encoderNr);
     // move one electrical revolution backwards
@@ -542,6 +569,7 @@ int alignSensor(uint16_t m) {
 	    encoderUpdate(mot[m].encoderNr);
       Delay(1);
     }
+    Delay(50);
     encoderUpdate(mot[m].encoderNr);
     float end_angle = encoder_getLastAngle(mot[m].encoderNr);
     // determine the direction the sensor moved
@@ -555,6 +583,7 @@ int alignSensor(uint16_t m) {
       //SIMPLEFOC_DEBUG("MOT: mot[m].encoder.encoderDirection==CW");
       encoder[mot[m].encoderNr].encoderDirection = 1;//Direction::CW;
     }
+    encoder[mot[m].encoderNr].enabled=true;
     // check pole pair number
     float moved =  _fabs((mid_angle - end_angle));
     if( _fabs((moved*mot[m].PolePairs - _2PI)) > 0.5f ) { // 0.5f is arbitrary number it can be lower or higher!
@@ -567,7 +596,7 @@ int alignSensor(uint16_t m) {
     // align the electrical phases of the motor and sensor
     // set angle -90(270 = 3PI/2) degrees
     setPhaseVoltage(m, mot[m].maxTorque, 0,  _3PI_2);
-    Delay(800);
+    Delay(1000);
     // read the sensor
     encoderUpdate(mot[m].encoderNr);
     // get the current zero electric angle
@@ -854,6 +883,8 @@ void __attribute__ ((weak)) DMA_Channel0_CallBack(void)
         } else
         if (command==12) {//get encoder angle
             ftoi16=FloatToInt16(encoder[nr].angle);
+            //float f1=(float)encoder[0].rawWidth;
+            //ftoi16=FloatToInt16(f1);
             DMA_TxBuffer[1]=ftoi16.L;
             DMA_TxBuffer[2]=ftoi16.H;
 
@@ -1051,8 +1082,8 @@ int main(void)
     //Set 2 EncodersPWM range
     for (int i=0;i<2;i++){
         encoder[i].enabled=false;
-        encoder[i].encoderMinRawAngle=1;
-        encoder[i].encoderMaxRawAngle=45850;
+        encoder[i].encoderMinRawAngle=173;
+        encoder[i].encoderMaxRawAngle=45886;
         encoder[i].encoderRawAngle = (float)encoder[i].encoderMaxRawAngle - encoder[i].encoderMinRawAngle;
         encoder[i].min_elapsed_time = 0.000100;
         encoder[i].LPF_velocity.Tf=0.01f;//!<  parameter determining the velocity Low pass filter configuration
@@ -1060,17 +1091,13 @@ int main(void)
         encoder[i].zeroAngle=0;
     }
 
-    //Inicjalizacja glownego przerwania programowego i uruchomienie sygnalow PWM
-    //TMR1_Period16BitSet(defaultTimerPeriod);
-    
-    TMR1_SetInterruptHandler(&timer_interrupt);
-    TMR1_Start(); //every 250us
     PWM_Enable();   
     
-    SCCP1_TMR_Start(); //every 100us
+    SCCP1_TMR_Start(); //every 50.000.000/s
     motorsInit();              
             
     //glowna petla programu interpretujaca dane odczytane po SPI (od RPI)
+    uint64_t lastTick=_micros();
     while (1) {
 
         if (I2CRead==true) {
@@ -1085,8 +1112,10 @@ int main(void)
             I2C1_write_bytes(ACC_I2C_ADDRESS,I2Caddress,1,&I2Cdata);
         }
 
-        if (newTmr) {
-            newTmr = false;
+           
+        if (_micros()-lastTick>250) {
+            lastTick=_micros();
+
             #ifdef SaraKIT //dupa pamietac o tym
             lsm6ds3tr_i2c_check();
             #endif

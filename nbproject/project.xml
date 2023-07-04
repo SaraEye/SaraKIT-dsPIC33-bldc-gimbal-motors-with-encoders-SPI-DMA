@@ -13,7 +13,7 @@
             <sourceEncoding>ISO-8859-1</sourceEncoding>
             <make-dep-projects/>
             <sourceRootList>
-                <sourceRootElem>../../../../../../../Program Files/Microchip/xc16/v2.00/support/generic/h</sourceRootElem>
+                <sourceRootElem>../../../../../../../Program Files/Microchip/xc16/v2.10/support/generic/h</sourceRootElem>
                 <sourceRootElem>.</sourceRootElem>
             </sourceRootList>
             <confList>

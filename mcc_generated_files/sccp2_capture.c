@@ -51,8 +51,8 @@
 
 void SCCP2_CAPTURE_Initialize(void)
 {
-    // CCPON enabled; MOD Every falling edge; CCSEL enabled; CCPSIDL disabled; T32 16 Bit; CCPSLP disabled; TMRPS 1:1; CLKSEL FOSC/2; TMRSYNC disabled; 
-    CCP2CON1L = (0x8012 & 0x7FFF); //Disabling CCPON bit
+    // CCPON enabled; MOD Every rising edge; CCSEL enabled; CCPSIDL disabled; T32 16 Bit; CCPSLP disabled; TMRPS 1:1; CLKSEL FOSC/2; TMRSYNC disabled; 
+    CCP2CON1L = (0x8011 & 0x7FFF); //Disabling CCPON bit
     //RTRGEN disabled; ALTSYNC disabled; ONESHOT disabled; TRIGEN disabled; OPS Each IC Event; SYNC None; OPSSRC Timer Interrupt Event; 
     CCP2CON1H = 0x00;
     //ASDGM disabled; SSDG disabled; ASDG 0; PWMRSEN disabled; 
@@ -105,25 +105,8 @@ void SCCP2_CAPTURE_Stop( void )
     CCP2CON1Lbits.CCPON = false;
 }
 
-void getEnc2Val(uint16_t *enc){
-    *enc=enc2;
-}
 void __attribute__ ((weak)) SCCP2_CAPTURE_CallBack(void)
 {    
-        uint16_t rtime=0;
-        if(SCCP4_CAPTURE_IsBufferEmpty()||SCCP2_CAPTURE_IsBufferEmpty()){
-            return;
-        }
-        while(!SCCP4_CAPTURE_IsBufferEmpty()){
-            rtime=SCCP4_CAPTURE_Data16Read();
-        }
-        uint16_t ftime=0;
-        while(!SCCP2_CAPTURE_IsBufferEmpty()){
-            ftime=SCCP2_CAPTURE_Data16Read();
-        }
-        if(ftime>rtime){
-            enc2 =ftime-rtime;
-        }               
     // Add your custom callback code here
 }
 

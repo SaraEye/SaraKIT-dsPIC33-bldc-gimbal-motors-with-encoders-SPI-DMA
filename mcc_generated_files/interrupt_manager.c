@@ -58,12 +58,6 @@ void INTERRUPT_Initialize (void)
     //    CCTI: CCP2 Timer Event
     //    Priority: 4
         IPC6bits.CCT2IP = 4;
-    //    CCPI: CCP1 Capture/Compare Event
-    //    Priority: 3
-        IPC1bits.CCP1IP = 3;
-    //    CCTI: CCP1 Timer Event
-    //    Priority: 3
-        IPC1bits.CCT1IP = 3;
     //    CCPI: CCP3 Capture/Compare Event
     //    Priority: 4
         IPC8bits.CCP3IP = 4;
@@ -88,7 +82,4 @@ void INTERRUPT_Initialize (void)
     //    DMA0I: DMA Channel 0
     //    Priority: 1
         IPC1bits.DMA0IP = 1;
-    //    TI: Timer 1
-    //    Priority: 1
-        IPC0bits.T1IP = 1;
 }

@@ -48,11 +48,10 @@
 
 #include "sccp3_capture.h"
 
-
 void SCCP3_CAPTURE_Initialize(void)
 {
-    // CCPON enabled; MOD Every falling edge; CCSEL enabled; CCPSIDL disabled; T32 16 Bit; CCPSLP disabled; TMRPS 1:1; CLKSEL FOSC/2; TMRSYNC disabled; 
-    CCP3CON1L = (0x8012 & 0x7FFF); //Disabling CCPON bit
+    // CCPON enabled; MOD Every rising edge; CCSEL enabled; CCPSIDL disabled; T32 16 Bit; CCPSLP disabled; TMRPS 1:1; CLKSEL FOSC/2; TMRSYNC disabled; 
+    CCP3CON1L = (0x8011 & 0x7FFF); //Disabling CCPON bit
     //RTRGEN disabled; ALTSYNC disabled; ONESHOT disabled; TRIGEN disabled; OPS Each IC Event; SYNC None; OPSSRC Timer Interrupt Event; 
     CCP3CON1H = 0x00;
     //ASDGM disabled; SSDG disabled; ASDG 0; PWMRSEN disabled; 
@@ -106,28 +105,8 @@ void SCCP3_CAPTURE_Stop( void )
     CCP3CON1Lbits.CCPON = false;
 }
 
-
-void getEnc1Val(uint16_t *enc){
-    *enc=enc1;
-}
 void __attribute__ ((weak)) SCCP3_CAPTURE_CallBack(void)
 {
-    uint16_t rtime=0;
-        
-    if(SCCP5_CAPTURE_IsBufferEmpty()||SCCP3_CAPTURE_IsBufferEmpty()){
-        return;
-    }
-    while(!SCCP5_CAPTURE_IsBufferEmpty()){
-        rtime=SCCP5_CAPTURE_Data16Read();
-    }
-    uint16_t ftime=0;
-    while(!SCCP3_CAPTURE_IsBufferEmpty()){
-        ftime=SCCP3_CAPTURE_Data16Read();
-    }
-    if(ftime>rtime){
-        enc1=ftime-rtime;
-    }
-
     // Add your custom callback code here
 }
 
@@ -165,7 +144,6 @@ uint16_t SCCP3_CAPTURE_Data16Read( void )
     return(CCP3BUFL);
 
 }
-
 
 bool SCCP3_CAPTURE_HasBufferOverflowed( void )
 {

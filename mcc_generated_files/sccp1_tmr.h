@@ -163,6 +163,24 @@ void SCCP1_TMR_Stop( void );
 */
 void SCCP1_TMR_Timer32CallBack(void);
 
+/**
+  void Tasks( void )
+ 
+  @Summary
+    Maintains the driver's secondary timer state machine in a polled manner
+
+  @Description
+    This routine is used to maintain the driver's internal secondary timer state
+    machine.This routine is called when the state of the secondary timer needs to be
+    maintained in a polled manner.
+
+  @Param
+    None.
+
+  @Returns
+    None
+*/
+void SCCP1_TMR_Timer32Tasks( void );
 
 /**
   @Summary

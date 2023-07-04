@@ -27,12 +27,10 @@
         <itemPath>mcc_generated_files/sccp1_tmr.h</itemPath>
         <itemPath>mcc_generated_files/sccp2_capture.h</itemPath>
         <itemPath>mcc_generated_files/sccp3_capture.h</itemPath>
-        <itemPath>mcc_generated_files/sccp4_capture.h</itemPath>
-        <itemPath>mcc_generated_files/sccp5_capture.h</itemPath>
         <itemPath>mcc_generated_files/delay.h</itemPath>
         <itemPath>mcc_generated_files/dma.h</itemPath>
       </logicalFolder>
-      <itemPath>c:/Program Files/Microchip/xc16/v2.00/support/generic/h/dsp.h</itemPath>
+      <itemPath>C:/Program Files/Microchip/xc16/v2.10/support/generic/h/dsp.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -62,8 +60,6 @@
         <itemPath>mcc_generated_files/sccp1_tmr.c</itemPath>
         <itemPath>mcc_generated_files/sccp2_capture.c</itemPath>
         <itemPath>mcc_generated_files/sccp3_capture.c</itemPath>
-        <itemPath>mcc_generated_files/sccp4_capture.c</itemPath>
-        <itemPath>mcc_generated_files/sccp5_capture.c</itemPath>
         <itemPath>mcc_generated_files/delay.c</itemPath>
         <itemPath>mcc_generated_files/dma.c</itemPath>
       </logicalFolder>
@@ -81,7 +77,7 @@
     </logicalFolder>
   </logicalFolder>
   <sourceRootList>
-    <Elem>../../../../../../../Program Files/Microchip/xc16/v2.00/support/generic/h</Elem>
+    <Elem>../../../../../../../Program Files/Microchip/xc16/v2.10/support/generic/h</Elem>
     <Elem>.</Elem>
   </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
@@ -94,18 +90,18 @@
         <targetPluginBoard></targetPluginBoard>
         <platformTool>snap</platformTool>
         <languageToolchain>XC16</languageToolchain>
-        <languageToolchainVersion>2.00</languageToolchainVersion>
+        <languageToolchainVersion>2.10</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <packs>
-        <pack name="dsPIC33CK-MP_DFP" vendor="Microchip" version="1.9.228"/>
+        <pack name="dsPIC33CK-MP_DFP" vendor="Microchip" version="1.11.346"/>
       </packs>
       <ScriptingSettings>
       </ScriptingSettings>
       <compileType>
         <linkerTool>
           <linkerLibItems>
-            <linkerLibFileItem>C:/Program Files/Microchip/xc16/v2.00/lib/libdsp-elf.a</linkerLibFileItem>
+            <linkerLibFileItem>C:/Program Files/Microchip/xc16/v2.10/lib/libdsp-elf.a</linkerLibFileItem>
           </linkerLibItems>
         </linkerTool>
         <archiverTool>
@@ -314,7 +310,10 @@
         <property key="debugoptions.reset-behaviour" value="Use system settings"/>
         <property key="debugoptions.simultaneous.debug" value="false"/>
         <property key="debugoptions.useswbreakpoints" value="false"/>
+        <property key="event.recorder.enabled" value="false"/>
+        <property key="event.recorder.scvd.files" value=""/>
         <property key="freeze.timers" value="false"/>
+        <property key="lastid" value=""/>
         <property key="memories.aux" value="false"/>
         <property key="memories.bootflash" value="true"/>
         <property key="memories.configurationmemory" value="true"/>
@@ -406,7 +405,10 @@
         <property key="debugoptions.reset-behaviour" value="Use system settings"/>
         <property key="debugoptions.simultaneous.debug" value="false"/>
         <property key="debugoptions.useswbreakpoints" value="false"/>
+        <property key="event.recorder.enabled" value="false"/>
+        <property key="event.recorder.scvd.files" value=""/>
         <property key="freeze.timers" value="false"/>
+        <property key="lastid" value=""/>
         <property key="memories.aux" value="false"/>
         <property key="memories.bootflash" value="true"/>
         <property key="memories.configurationmemory" value="true"/>
