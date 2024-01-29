@@ -1,26 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
-    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="19">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="20">
         <file>
             <url>main.c</url>
             <bookmark id="19">
                 <name/>
-                <line>677</line>
+                <line>685</line>
                 <key/>
             </bookmark>
-            <bookmark id="17">
+            <bookmark id="20">
                 <name/>
                 <line>770</line>
                 <key/>
             </bookmark>
             <bookmark id="18">
                 <name/>
-                <line>953</line>
+                <line>960</line>
                 <key/>
             </bookmark>
         </file>
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/D:/_SaraKIT/_GitHub/___ready/SaraKIT-dsPIC33-bldc-gimbal-motors-with-encoders-SPI-DMA/main.c</file>
+            <file>file:/D:/_SaraKIT/_GitHub/___ready/SaraKIT-dsPIC33-bldc-gimbal-motors-with-encoders-SPI-DMA/mcc_generated_files/sccp1_tmr.c</file>
+        </group>
     </open-files>
 </project-private>

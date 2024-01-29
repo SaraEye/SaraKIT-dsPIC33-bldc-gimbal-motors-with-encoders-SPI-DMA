@@ -138,7 +138,7 @@ volatile struct motor{
     volatile float maxVelocity;//1 = 2PI = jeden obrót ale gdy 11 polepair to 1=1/11 
     volatile float maxTorque; //!< Voltage limitting variable - global limit
     volatile float electricalPosition;//0 //obecna pozycja w tablicy generujacej kolowe pole magnetyczne 0.0-360.0
-    volatile uint32_t lastMotion;//0 //jak dawno ostatni ruch, zero gdy nadal trwa
+    volatile uint64_t lastMotion;//0 //jak dawno ostatni ruch, zero gdy nadal trwa
     volatile float idleTorque;//1.0f
     volatile float keepTorqueTime;//2000
     volatile float dir;//1 //kierunek ruchu
@@ -188,6 +188,11 @@ extern bool LSM6DS3TREnable;
 uint64_t _micros(){  
     //volatile uint64_t tmr=0; //every 50.000.000/s = 50.000/ms = 50/us
     return SCCP1_TMR_Counter32BitGet()/50;
+}
+
+uint64_t _milisec(){  
+    //volatile uint64_t tmr=0; //every 50.000.000/s = 50.000/ms = 50/us
+    return (SCCP1_TMR_Counter32BitGet()/50)/1000;
 }
 
 void SCCP3_CAPTURE_CallBack(void)
@@ -755,17 +760,15 @@ void move(uint16_t m, float new_target) {
       if (mot[m].PID_velocity.P!=-1)
         mot[m].maxVelocity = _fabs(PIDControllerF(&mot[m].PID_velocity,mot[m].target - mot[m].currentPosition));
 
-      if (mot[m].maxVelocity>10)
-          mot[m].maxVelocity=10;
       aoloop=angleOpenloop(m, mot[m].target); // returns the voltage that is set to the motor
      
-      if (_fabs(mot[m].voltage.q-aoloop)<0.02) {
-        mot[m].lastMotion++;
-        if (mot[m].isEncoder==false && (float)mot[m].lastMotion/4.0>mot[m].keepTorqueTime) {
-            mot[m].maxTorque=mot[m].idleTorque; 
+      //if (_fabs(mot[m].voltage.q-aoloop)<0.02) {
+      if (_fabs(mot[m].target - mot[m].currentPosition)<0.02) {
+        if (mot[m].isEncoder==false && (float)(_milisec()-mot[m].lastMotion)>mot[m].keepTorqueTime) {
+            mot[m].maxTorque=mot[m].idleTorque;
         }          
       } else {
-            mot[m].lastMotion=0;
+            mot[m].lastMotion=_milisec();
       }
 
       mot[m].voltage.q = aoloop;
@@ -953,6 +956,7 @@ void __attribute__ ((weak)) DMA_Channel0_CallBack(void)
         if (command==50) { //Init Foc, set Encoder, zeroangle,
             mot[nr].encoderNr=DMA_RxBuffer[1];
             int16_t direction=DMA_RxBuffer[2];
+            mot[nr].enabled=1;
             if (direction==0) { //initFoc, get anglezero+direction
                 mot[nr].mode=1;
                 return;
@@ -996,16 +1000,14 @@ void __attribute__ ((weak)) DMA_Channel0_CallBack(void)
             else
                 mot[nr].controller=MCT_angle_openloop;   
 
-            mot[nr].lastMotion=0;
+            mot[nr].lastMotion=_milisec();
             mot[nr].maxTorque=(float)torque/10.0f;
             mot[nr].maxVelocity=speed;
             mot[nr].P_angle.limit=speed;
             if (mot[nr].isEncoder)
                 mot[nr].PID_velocity.limit=mot[nr].maxTorque;
             else {           
-                mot[nr].PID_velocity.limit=10;
-                if (mot[nr].maxVelocity<10) 
-                    mot[nr].PID_velocity.limit=mot[nr].maxVelocity;
+                mot[nr].PID_velocity.limit=mot[nr].maxVelocity;
             }
             mot[nr].dir=angle<0?-1.0:1.0;            
             if (command==51)
@@ -1019,9 +1021,11 @@ void __attribute__ ((weak)) DMA_Channel0_CallBack(void)
 
             if (mot[nr].isEncoder)
                 mot[nr].controller=MCT_torque;
-            else
+            else {
                 mot[nr].controller=MCT_velocity_openloop;
-                       
+                torque=torque*10;
+            }
+
             mot[nr].maxTorque=10.0;
             mot[nr].dir=direction;
             mot[nr].target=mot[nr].dir*torque;

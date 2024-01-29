@@ -172,13 +172,13 @@ section                    address   length (PC units)   length (bytes) (dec)
 -------                    -------   -----------------   --------------------
 .text                        0x200              0x12f6          0x1c71  (7281)
 .const                      0x14f6               0x192           0x25b  (603)
-.text                       0x1688              0x29ee          0x3ee5  (16101)
-.dinit                      0x4076                0x76            0xb1  (177)
-.text                       0x40ec               0x234           0x34e  (846)
-.init.delay32               0x4320                0x1c            0x2a  (42)
-.text                       0x433c                 0xe            0x15  (21)
+.text                       0x1688              0x2a14          0x3f1e  (16158)
+.dinit                      0x409c                0x76            0xb1  (177)
+.text                       0x4112               0x234           0x34e  (846)
+.init.delay32               0x4346                0x1c            0x2a  (42)
+.text                       0x4362                 0xe            0x15  (21)
 
-                 Total "program" memory used (bytes):         0x61ef  (25071) 70%
+                 Total "program" memory used (bytes):         0x6228  (25128) 70%
 
 
 "data" Memory  [Origin = 0x1000, Length = 0x2000]
@@ -188,11 +188,11 @@ section                    address      alignment gaps    total length  (dec)
 .nbss                       0x1000                   0            0x4e  (78)
 .ndata                      0x104e                   0             0x4  (4)
 .nbss                       0x1052                   0             0x2  (2)
-.bss                        0x1054                   0           0x304  (772)
-.data                       0x1358                   0            0x20  (32)
-.bss                        0x1378                   0            0x1e  (30)
+.bss                        0x1054                   0           0x30c  (780)
+.data                       0x1360                   0            0x20  (32)
+.bss                        0x1380                   0            0x1e  (30)
 
-                 Total "data" memory used (bytes):          0x396  (918) 11%
+                 Total "data" memory used (bytes):          0x39e  (926) 11%
 
 
 Dynamic Memory Usage
@@ -200,9 +200,9 @@ Dynamic Memory Usage
 region                     address                      maximum length  (dec)
 ------                     -------                      ---------------------
 heap                             0                                   0  (0)
-stack                       0x1396                              0x1c6a  (7274)
+stack                       0x139e                              0x1c62  (7266)
 
-                 Maximum dynamic memory (bytes):         0x1c6a  (7274)
+                 Maximum dynamic memory (bytes):         0x1c62  (7266)
 
 Info: Project is using a large data memory model when small data memory model is sufficient.
 
@@ -233,17 +233,17 @@ External Symbols in Data Memory (by address):
                     0x105c                  _i2cBufferRX
                     0x1064                  _encoder
                     0x1150                  _I2C_Buffer
-                    0x12b4                  _data_raw_acceleration
-                    0x12ba                  _data_raw_angular_rate
-                    0x12c0                  _new_data_raw_acceleration
-                    0x12c6                  _new_data_raw_angular_rate
-                    0x12f8                  _DMA_TxBuffer
-                    0x1318                  _DMA_RxBuffer
+                    0x12bc                  _data_raw_acceleration
+                    0x12c2                  _data_raw_angular_rate
+                    0x12c8                  _new_data_raw_acceleration
+                    0x12ce                  _new_data_raw_angular_rate
+                    0x1300                  _DMA_TxBuffer
+                    0x1320                  _DMA_RxBuffer
 
 External Symbols in Data Memory (by name):
 
-                    0x1318                  _DMA_RxBuffer
-                    0x12f8                  _DMA_TxBuffer
+                    0x1320                  _DMA_RxBuffer
+                    0x1300                  _DMA_TxBuffer
                     0x1034                  _I2CRead
                     0x1035                  _I2CWrite
                     0x1150                  _I2C_Buffer
@@ -255,16 +255,16 @@ External Symbols in Data Memory (by name):
                     0x1003                  _LSM6DS3TREnable
                     0x1006                  __deviceAddress
                     0x1004                  __initiated
-                    0x12b4                  _data_raw_acceleration
-                    0x12ba                  _data_raw_angular_rate
+                    0x12bc                  _data_raw_acceleration
+                    0x12c2                  _data_raw_angular_rate
                     0x100a                  _data_raw_temperature
                     0x1014                  _dev_ctx
                     0x1064                  _encoder
                     0x101e                  _i2c1_state
                     0x105c                  _i2cBufferRX
                     0x1054                  _i2cBufferTX
-                    0x12c0                  _new_data_raw_acceleration
-                    0x12c6                  _new_data_raw_angular_rate
+                    0x12c8                  _new_data_raw_acceleration
+                    0x12ce                  _new_data_raw_angular_rate
                     0x100c                  _new_data_raw_temperature
                     0x1010                  _readStatus
                     0x1008                  _reg
@@ -294,11 +294,11 @@ External Symbols in Program Memory (by address):
                   0x000656                  __DMA1Interrupt
                   0x000688                  __SPI1RXInterrupt
                   0x00068c                  __DefaultInterrupt
-                  0x000692                  ___lesf2
-                  0x000692                  ___ltsf2
                   0x000692                  ___eqsf2
-                  0x000696                  ___gtsf2
+                  0x000692                  ___ltsf2
+                  0x000692                  ___lesf2
                   0x000696                  ___gesf2
+                  0x000696                  ___gtsf2
                   0x00069a                  ___fixsfsi
                   0x0006dc                  ___fixunssfsi
                   0x000712                  ___floatsisf
@@ -310,13 +310,13 @@ External Symbols in Program Memory (by address):
                   0x0007f4                  ___udivsi3
                   0x000814                  ___subsf3
                   0x000814                  ___subsf3x
-                  0x000826                  ___addsf3x
                   0x000826                  ___addsf3
+                  0x000826                  ___addsf3x
                   0x0009f0                  ___divsf3
                   0x0009f0                  ___divsf3x
                   0x000b82                  __sdivf
-                  0x000bae                  ___mulsf3
                   0x000bae                  ___mulsf3x
+                  0x000bae                  ___mulsf3
                   0x000cba                  __dnrmpackf
                   0x000d0e                  __unpackdnrmf
                   0x000d6c                  __typef
@@ -332,271 +332,272 @@ External Symbols in Program Memory (by address):
                   0x00125c                  _floorf
                   0x0012da                  _fmodf
                   0x001422                  _memset
-                  0x0014ea                  ___mulp32peds3
                   0x0014ea                  ___mulp32eds3
                   0x0014ea                  ___mulsi3
+                  0x0014ea                  ___mulp32peds3
                   0x0014f6                  _sine_array
                   0x001686                  _CTRL_REG1_ADDRESS
                   0x0016ca                  __micros
-                  0x0016d6                  _SCCP3_CAPTURE_CallBack
-                  0x001716                  _SCCP2_CAPTURE_CallBack
-                  0x001756                  _Delay
-                  0x00175a                  __sin
-                  0x00189a                  __sqrtApprox
-                  0x0018aa                  _PIDControllerF
-                  0x001a58                  _LowPassFilterF
-                  0x001b10                  __normalizeAngle
-                  0x001b38                  __electricalAngle
-                  0x001b4a                  _encoder_getAngle
-                  0x001b70                  _encoder_getVelocity
-                  0x001c4e                  _encoder_getLastAngle
-                  0x001c74                  _encoderUpdate
-                  0x001d24                  _shaftAngle
-                  0x001d78                  _setPhaseVoltage
-                  0x002034                  _angleOpenloop
-                  0x0021c4                  _encoder_init
-                  0x002226                  _getMechanicalAngle
-                  0x00223c                  _electricalAngle
-                  0x0022a2                  _alignSensor
-                  0x002484                  _initFOC
-                  0x0024d4                  _shaftVelocity
-                  0x002516                  _velocityOpenloop
-                  0x0025dc                  _loopFOC
-                  0x00261a                  _move
-                  0x002910                  _motorsInit
-                  0x0029b0                  _FloatToInt16
-                  0x0029b6                  _getFloat
-                  0x002fa2                  _main
-                  0x003166                  _lsm6ds3tr_c_read_reg
-                  0x003170                  _lsm6ds3tr_c_write_reg
-                  0x00317a                  _lsm6ds3tr_c_xl_full_scale_set
-                  0x0031ae                  _lsm6ds3tr_c_xl_data_rate_set
-                  0x0031de                  _lsm6ds3tr_c_gy_full_scale_set
-                  0x003212                  _lsm6ds3tr_c_gy_data_rate_set
-                  0x003242                  _lsm6ds3tr_c_block_data_update_set
-                  0x003276                  _lsm6ds3tr_c_gy_power_mode_set
-                  0x0032a6                  _lsm6ds3tr_c_device_id_get
-                  0x0032b0                  _lsm6ds3tr_c_reset_set
-                  0x0032e2                  _lsm6ds3tr_c_reset_get
-                  0x0032fa                  _lsm6ds3tr_c_fifo_mode_set
-                  0x00332c                  _lsm6ds3tr_c_xl_filter_analog_set
-                  0x00335c                  _lsm6ds3tr_c_xl_lp1_bandwidth_set
-                  0x0033b4                  _lsm6ds3tr_c_xl_lp2_bandwidth_set
-                  0x0033f6                  _lsm6ds3tr_c_gy_band_pass_set
-                  0x003494                  _I2C1_write_bytes
-                  0x003508                  build/default/production/LSM6DS3TR.o:_platform_write
-                  0x003516                  _I2C1_read_bytes
-                  0x00356a                  build/default/production/LSM6DS3TR.o:_platform_read
-                  0x003578                  _I2C1_read_bytes2
-                  0x0035ac                  _lsm6ds3tr_i2c_init
-                  0x003630                  _lsm6ds3tr_i2c_check
-                  0x00375c                  _DMA__Channel2_Tasks
-                  0x003768                  _DMA__Channel3_Tasks
-                  0x003772                  _DMA_ChannelEnable
-                  0x003792                  _DMA_ChannelDisable
-                  0x0037b2                  _DMA_TransferCountSet
-                  0x0037d2                  _DMA_TransferCountGet
-                  0x0037f6                  _DMA_SoftwareTriggerEnable
-                  0x003816                  _DMA_SourceAddressSet
-                  0x003836                  _DMA_DestinationAddressSet
-                  0x003856                  _DMA_Initialize
-                  0x0038e2                  _DMA_IsSoftwareRequestPending
-                  0x00390e                  _DMA_IsBufferedWriteComplete
-                  0x00393a                  _DMA_IsHighAddressLimitFlagSet
-                  0x003966                  _DMA_IsLowAddressLimitFlagSet
-                  0x003992                  _DMA_IsOperationDone
-                  0x0039be                  _DMA_IsOverrunFlagSet
-                  0x0039ea                  _DMA_IsOperationHalfComplete
-                  0x003a16                  _PWM_Initialize
-                  0x003b92                  _PWM_Generator1_Tasks
-                  0x003b9e                  _PWM_Generator2_Tasks
-                  0x003baa                  _PWM_Generator3_Tasks
-                  0x003bb6                  _PWM_Generator4_Tasks
-                  0x003bc2                  _PWM_Generator5_Tasks
-                  0x003bce                  _PWM_Generator6_Tasks
-                  0x003bda                  _PWM_EventA_Tasks
-                  0x003be6                  _PWM_EventB_Tasks
-                  0x003bf2                  _PWM_EventC_Tasks
-                  0x003bfe                  _PWM_EventD_Tasks
-                  0x003c0a                  _PWM_EventE_Tasks
-                  0x003c16                  _PWM_EventF_Tasks
-                  0x003c28                  _ADC1_Core0PowerEnable
-                  0x003c36                  _ADC1_Core1PowerEnable
-                  0x003c44                  _ADC1_SharedCorePowerEnable
-                  0x003c52                  _ADC1_SetCommonInterruptHandler
-                  0x003c66                  _ADC1_Setchannel_AN4InterruptHandler
-                  0x003c7a                  _ADC1_Setchannel_AN24InterruptHandler
-                  0x003c7e                  _ADC1_Setchannel_AN25InterruptHandler
-                  0x003c82                  _ADC1_Initialize
-                  0x003d46                  _I2C1_Initialize
-                  0x003d66                  _I2C1_ErrorCountGet
-                  0x003d6a                  _I2C1_MasterTRBInsert
-                  0x003d9e                  _I2C1_MasterReadTRBBuild
-                  0x003daa                  _I2C1_MasterRead
-                  0x003dcc                  _I2C1_MasterWriteTRBBuild
-                  0x003dd4                  _I2C1_MasterWrite
-                  0x003df6                  _I2C1_MasterQueueIsEmpty
-                  0x003dfc                  _I2C1_MasterQueueIsFull
-                  0x003e02                  _SPI1_Initialize
-                  0x003e30                  _SPI1_Exchange
-                  0x003e46                  _SPI1_ExchangeBuffer
-                  0x003ebc                  _SPI1_Exchange16bit
-                  0x003ed2                  _SPI1_Exchange16bitBuffer
-                  0x003ed6                  _SPI1_StatusGet
-                  0x003eda                  _SCCP1_TMR_Initialize
-                  0x003f02                  _SCCP1_TMR_Start
-                  0x003f14                  _SCCP1_TMR_Stop
-                  0x003f1a                  _SCCP1_TMR_Timer32Tasks
-                  0x003f2a                  _SCCP1_TMR_Period32BitSet
-                  0x003f34                  _SCCP1_TMR_Period32BitGet
-                  0x003f46                  _SCCP1_TMR_Counter32BitSet
-                  0x003f50                  _SCCP1_TMR_Counter32BitGet
-                  0x003f62                  _SCCP1_TMR_Timer32ElapsedThenClear
-                  0x003f9e                  _RESET_GetCause
-                  0x003ff4                  _RESET_CauseClearAll
-                  0x003ff8                  _PIN_MANAGER_Initialize
-                  0x0040ec                  _CLOCK_Initialize
-                  0x004148                  _CLOCK_AuxPllLockStatusGet
-                  0x00414e                  _TMR1_Initialize
-                  0x00415e                  _TMR1_Tasks_16BitOperation
-                  0x004170                  _TMR1_Period16BitSet
-                  0x004178                  _TMR1_Period16BitGet
-                  0x00417c                  _TMR1_Counter16BitSet
-                  0x004184                  _TMR1_Counter16BitGet
-                  0x004188                  _TMR1_Start
-                  0x004190                  _TMR1_Stop
-                  0x004194                  _TMR1_GetElapsedThenClear
-                  0x0041a2                  _TMR1_SoftwareCounterGet
-                  0x0041a8                  _TMR1_SoftwareCounterClear
-                  0x0041ae                  _INTERRUPT_Initialize
-                  0x004204                  _DELAY_milliseconds
-                  0x004220                  _DELAY_microseconds
-                  0x004256                  _SCCP2_CAPTURE_Initialize
-                  0x004280                  _SCCP2_CAPTURE_Start
-                  0x004284                  _SCCP2_CAPTURE_Stop
-                  0x00428c                  _SCCP2_CAPTURE_Data16Read
-                  0x004290                  _SCCP2_CAPTURE_HasBufferOverflowed
-                  0x004296                  _SCCP2_CAPTURE_IsBufferEmpty
-                  0x00429e                  _SCCP2_CAPTURE_OverflowFlagReset
-                  0x0042a2                  _SCCP3_CAPTURE_Initialize
-                  0x0042cc                  _SCCP3_CAPTURE_Start
-                  0x0042d0                  _SCCP3_CAPTURE_Stop
-                  0x0042d8                  _SCCP3_CAPTURE_Data16Read
-                  0x0042dc                  _SCCP3_CAPTURE_HasBufferOverflowed
-                  0x0042e2                  _SCCP3_CAPTURE_IsBufferEmpty
-                  0x0042ea                  _SCCP3_CAPTURE_OverflowFlagReset
-                  0x004302                  _SYSTEM_Initialize
-                  0x004320                  ___delay32
+                  0x0016d6                  __milisec
+                  0x0016e2                  _SCCP3_CAPTURE_CallBack
+                  0x001722                  _SCCP2_CAPTURE_CallBack
+                  0x001762                  _Delay
+                  0x001766                  __sin
+                  0x0018a6                  __sqrtApprox
+                  0x0018b6                  _PIDControllerF
+                  0x001a64                  _LowPassFilterF
+                  0x001b1c                  __normalizeAngle
+                  0x001b44                  __electricalAngle
+                  0x001b56                  _encoder_getAngle
+                  0x001b7c                  _encoder_getVelocity
+                  0x001c5a                  _encoder_getLastAngle
+                  0x001c80                  _encoderUpdate
+                  0x001d30                  _shaftAngle
+                  0x001d84                  _setPhaseVoltage
+                  0x002040                  _angleOpenloop
+                  0x0021d0                  _encoder_init
+                  0x002232                  _getMechanicalAngle
+                  0x002248                  _electricalAngle
+                  0x0022ae                  _alignSensor
+                  0x002490                  _initFOC
+                  0x0024e0                  _shaftVelocity
+                  0x002522                  _velocityOpenloop
+                  0x0025e8                  _loopFOC
+                  0x002626                  _move
+                  0x002940                  _motorsInit
+                  0x0029e0                  _FloatToInt16
+                  0x0029e6                  _getFloat
+                  0x002fc8                  _main
+                  0x00318c                  _lsm6ds3tr_c_read_reg
+                  0x003196                  _lsm6ds3tr_c_write_reg
+                  0x0031a0                  _lsm6ds3tr_c_xl_full_scale_set
+                  0x0031d4                  _lsm6ds3tr_c_xl_data_rate_set
+                  0x003204                  _lsm6ds3tr_c_gy_full_scale_set
+                  0x003238                  _lsm6ds3tr_c_gy_data_rate_set
+                  0x003268                  _lsm6ds3tr_c_block_data_update_set
+                  0x00329c                  _lsm6ds3tr_c_gy_power_mode_set
+                  0x0032cc                  _lsm6ds3tr_c_device_id_get
+                  0x0032d6                  _lsm6ds3tr_c_reset_set
+                  0x003308                  _lsm6ds3tr_c_reset_get
+                  0x003320                  _lsm6ds3tr_c_fifo_mode_set
+                  0x003352                  _lsm6ds3tr_c_xl_filter_analog_set
+                  0x003382                  _lsm6ds3tr_c_xl_lp1_bandwidth_set
+                  0x0033da                  _lsm6ds3tr_c_xl_lp2_bandwidth_set
+                  0x00341c                  _lsm6ds3tr_c_gy_band_pass_set
+                  0x0034ba                  _I2C1_write_bytes
+                  0x00352e                  build/default/production/LSM6DS3TR.o:_platform_write
+                  0x00353c                  _I2C1_read_bytes
+                  0x003590                  build/default/production/LSM6DS3TR.o:_platform_read
+                  0x00359e                  _I2C1_read_bytes2
+                  0x0035d2                  _lsm6ds3tr_i2c_init
+                  0x003656                  _lsm6ds3tr_i2c_check
+                  0x003782                  _DMA__Channel2_Tasks
+                  0x00378e                  _DMA__Channel3_Tasks
+                  0x003798                  _DMA_ChannelEnable
+                  0x0037b8                  _DMA_ChannelDisable
+                  0x0037d8                  _DMA_TransferCountSet
+                  0x0037f8                  _DMA_TransferCountGet
+                  0x00381c                  _DMA_SoftwareTriggerEnable
+                  0x00383c                  _DMA_SourceAddressSet
+                  0x00385c                  _DMA_DestinationAddressSet
+                  0x00387c                  _DMA_Initialize
+                  0x003908                  _DMA_IsSoftwareRequestPending
+                  0x003934                  _DMA_IsBufferedWriteComplete
+                  0x003960                  _DMA_IsHighAddressLimitFlagSet
+                  0x00398c                  _DMA_IsLowAddressLimitFlagSet
+                  0x0039b8                  _DMA_IsOperationDone
+                  0x0039e4                  _DMA_IsOverrunFlagSet
+                  0x003a10                  _DMA_IsOperationHalfComplete
+                  0x003a3c                  _PWM_Initialize
+                  0x003bb8                  _PWM_Generator1_Tasks
+                  0x003bc4                  _PWM_Generator2_Tasks
+                  0x003bd0                  _PWM_Generator3_Tasks
+                  0x003bdc                  _PWM_Generator4_Tasks
+                  0x003be8                  _PWM_Generator5_Tasks
+                  0x003bf4                  _PWM_Generator6_Tasks
+                  0x003c00                  _PWM_EventA_Tasks
+                  0x003c0c                  _PWM_EventB_Tasks
+                  0x003c18                  _PWM_EventC_Tasks
+                  0x003c24                  _PWM_EventD_Tasks
+                  0x003c30                  _PWM_EventE_Tasks
+                  0x003c3c                  _PWM_EventF_Tasks
+                  0x003c4e                  _ADC1_Core0PowerEnable
+                  0x003c5c                  _ADC1_Core1PowerEnable
+                  0x003c6a                  _ADC1_SharedCorePowerEnable
+                  0x003c78                  _ADC1_SetCommonInterruptHandler
+                  0x003c8c                  _ADC1_Setchannel_AN4InterruptHandler
+                  0x003ca0                  _ADC1_Setchannel_AN24InterruptHandler
+                  0x003ca4                  _ADC1_Setchannel_AN25InterruptHandler
+                  0x003ca8                  _ADC1_Initialize
+                  0x003d6c                  _I2C1_Initialize
+                  0x003d8c                  _I2C1_ErrorCountGet
+                  0x003d90                  _I2C1_MasterTRBInsert
+                  0x003dc4                  _I2C1_MasterReadTRBBuild
+                  0x003dd0                  _I2C1_MasterRead
+                  0x003df2                  _I2C1_MasterWriteTRBBuild
+                  0x003dfa                  _I2C1_MasterWrite
+                  0x003e1c                  _I2C1_MasterQueueIsEmpty
+                  0x003e22                  _I2C1_MasterQueueIsFull
+                  0x003e28                  _SPI1_Initialize
+                  0x003e56                  _SPI1_Exchange
+                  0x003e6c                  _SPI1_ExchangeBuffer
+                  0x003ee2                  _SPI1_Exchange16bit
+                  0x003ef8                  _SPI1_Exchange16bitBuffer
+                  0x003efc                  _SPI1_StatusGet
+                  0x003f00                  _SCCP1_TMR_Initialize
+                  0x003f28                  _SCCP1_TMR_Start
+                  0x003f3a                  _SCCP1_TMR_Stop
+                  0x003f40                  _SCCP1_TMR_Timer32Tasks
+                  0x003f50                  _SCCP1_TMR_Period32BitSet
+                  0x003f5a                  _SCCP1_TMR_Period32BitGet
+                  0x003f6c                  _SCCP1_TMR_Counter32BitSet
+                  0x003f76                  _SCCP1_TMR_Counter32BitGet
+                  0x003f88                  _SCCP1_TMR_Timer32ElapsedThenClear
+                  0x003fc4                  _RESET_GetCause
+                  0x00401a                  _RESET_CauseClearAll
+                  0x00401e                  _PIN_MANAGER_Initialize
+                  0x004112                  _CLOCK_Initialize
+                  0x00416e                  _CLOCK_AuxPllLockStatusGet
+                  0x004174                  _TMR1_Initialize
+                  0x004184                  _TMR1_Tasks_16BitOperation
+                  0x004196                  _TMR1_Period16BitSet
+                  0x00419e                  _TMR1_Period16BitGet
+                  0x0041a2                  _TMR1_Counter16BitSet
+                  0x0041aa                  _TMR1_Counter16BitGet
+                  0x0041ae                  _TMR1_Start
+                  0x0041b6                  _TMR1_Stop
+                  0x0041ba                  _TMR1_GetElapsedThenClear
+                  0x0041c8                  _TMR1_SoftwareCounterGet
+                  0x0041ce                  _TMR1_SoftwareCounterClear
+                  0x0041d4                  _INTERRUPT_Initialize
+                  0x00422a                  _DELAY_milliseconds
+                  0x004246                  _DELAY_microseconds
+                  0x00427c                  _SCCP2_CAPTURE_Initialize
+                  0x0042a6                  _SCCP2_CAPTURE_Start
+                  0x0042aa                  _SCCP2_CAPTURE_Stop
+                  0x0042b2                  _SCCP2_CAPTURE_Data16Read
+                  0x0042b6                  _SCCP2_CAPTURE_HasBufferOverflowed
+                  0x0042bc                  _SCCP2_CAPTURE_IsBufferEmpty
+                  0x0042c4                  _SCCP2_CAPTURE_OverflowFlagReset
+                  0x0042c8                  _SCCP3_CAPTURE_Initialize
+                  0x0042f2                  _SCCP3_CAPTURE_Start
+                  0x0042f6                  _SCCP3_CAPTURE_Stop
+                  0x0042fe                  _SCCP3_CAPTURE_Data16Read
+                  0x004302                  _SCCP3_CAPTURE_HasBufferOverflowed
+                  0x004308                  _SCCP3_CAPTURE_IsBufferEmpty
+                  0x004310                  _SCCP3_CAPTURE_OverflowFlagReset
+                  0x004328                  _SYSTEM_Initialize
+                  0x004346                  ___delay32
                   0x005f00                  __FSEC.sec
 
 External Symbols in Program Memory (by name):
 
-                  0x003c28                  _ADC1_Core0PowerEnable
-                  0x003c36                  _ADC1_Core1PowerEnable
-                  0x003c82                  _ADC1_Initialize
-                  0x003c52                  _ADC1_SetCommonInterruptHandler
-                  0x003c7a                  _ADC1_Setchannel_AN24InterruptHandler
-                  0x003c7e                  _ADC1_Setchannel_AN25InterruptHandler
-                  0x003c66                  _ADC1_Setchannel_AN4InterruptHandler
-                  0x003c44                  _ADC1_SharedCorePowerEnable
-                  0x004148                  _CLOCK_AuxPllLockStatusGet
-                  0x0040ec                  _CLOCK_Initialize
+                  0x003c4e                  _ADC1_Core0PowerEnable
+                  0x003c5c                  _ADC1_Core1PowerEnable
+                  0x003ca8                  _ADC1_Initialize
+                  0x003c78                  _ADC1_SetCommonInterruptHandler
+                  0x003ca0                  _ADC1_Setchannel_AN24InterruptHandler
+                  0x003ca4                  _ADC1_Setchannel_AN25InterruptHandler
+                  0x003c8c                  _ADC1_Setchannel_AN4InterruptHandler
+                  0x003c6a                  _ADC1_SharedCorePowerEnable
+                  0x00416e                  _CLOCK_AuxPllLockStatusGet
+                  0x004112                  _CLOCK_Initialize
                   0x001686                  _CTRL_REG1_ADDRESS
-                  0x004220                  _DELAY_microseconds
-                  0x004204                  _DELAY_milliseconds
-                  0x003792                  _DMA_ChannelDisable
-                  0x003772                  _DMA_ChannelEnable
-                  0x003836                  _DMA_DestinationAddressSet
-                  0x003856                  _DMA_Initialize
-                  0x00390e                  _DMA_IsBufferedWriteComplete
-                  0x00393a                  _DMA_IsHighAddressLimitFlagSet
-                  0x003966                  _DMA_IsLowAddressLimitFlagSet
-                  0x003992                  _DMA_IsOperationDone
-                  0x0039ea                  _DMA_IsOperationHalfComplete
-                  0x0039be                  _DMA_IsOverrunFlagSet
-                  0x0038e2                  _DMA_IsSoftwareRequestPending
-                  0x0037f6                  _DMA_SoftwareTriggerEnable
-                  0x003816                  _DMA_SourceAddressSet
-                  0x0037d2                  _DMA_TransferCountGet
-                  0x0037b2                  _DMA_TransferCountSet
-                  0x00375c                  _DMA__Channel2_Tasks
-                  0x003768                  _DMA__Channel3_Tasks
-                  0x001756                  _Delay
-                  0x0029b0                  _FloatToInt16
-                  0x003d66                  _I2C1_ErrorCountGet
-                  0x003d46                  _I2C1_Initialize
-                  0x003df6                  _I2C1_MasterQueueIsEmpty
-                  0x003dfc                  _I2C1_MasterQueueIsFull
-                  0x003daa                  _I2C1_MasterRead
-                  0x003d9e                  _I2C1_MasterReadTRBBuild
-                  0x003d6a                  _I2C1_MasterTRBInsert
-                  0x003dd4                  _I2C1_MasterWrite
-                  0x003dcc                  _I2C1_MasterWriteTRBBuild
-                  0x003516                  _I2C1_read_bytes
-                  0x003578                  _I2C1_read_bytes2
-                  0x003494                  _I2C1_write_bytes
-                  0x0041ae                  _INTERRUPT_Initialize
-                  0x001a58                  _LowPassFilterF
-                  0x0018aa                  _PIDControllerF
-                  0x003ff8                  _PIN_MANAGER_Initialize
-                  0x003bda                  _PWM_EventA_Tasks
-                  0x003be6                  _PWM_EventB_Tasks
-                  0x003bf2                  _PWM_EventC_Tasks
-                  0x003bfe                  _PWM_EventD_Tasks
-                  0x003c0a                  _PWM_EventE_Tasks
-                  0x003c16                  _PWM_EventF_Tasks
-                  0x003b92                  _PWM_Generator1_Tasks
-                  0x003b9e                  _PWM_Generator2_Tasks
-                  0x003baa                  _PWM_Generator3_Tasks
-                  0x003bb6                  _PWM_Generator4_Tasks
-                  0x003bc2                  _PWM_Generator5_Tasks
-                  0x003bce                  _PWM_Generator6_Tasks
-                  0x003a16                  _PWM_Initialize
-                  0x003ff4                  _RESET_CauseClearAll
-                  0x003f9e                  _RESET_GetCause
-                  0x003f50                  _SCCP1_TMR_Counter32BitGet
-                  0x003f46                  _SCCP1_TMR_Counter32BitSet
-                  0x003eda                  _SCCP1_TMR_Initialize
-                  0x003f34                  _SCCP1_TMR_Period32BitGet
-                  0x003f2a                  _SCCP1_TMR_Period32BitSet
-                  0x003f02                  _SCCP1_TMR_Start
-                  0x003f14                  _SCCP1_TMR_Stop
-                  0x003f62                  _SCCP1_TMR_Timer32ElapsedThenClear
-                  0x003f1a                  _SCCP1_TMR_Timer32Tasks
-                  0x001716                  _SCCP2_CAPTURE_CallBack
-                  0x00428c                  _SCCP2_CAPTURE_Data16Read
-                  0x004290                  _SCCP2_CAPTURE_HasBufferOverflowed
-                  0x004256                  _SCCP2_CAPTURE_Initialize
-                  0x004296                  _SCCP2_CAPTURE_IsBufferEmpty
-                  0x00429e                  _SCCP2_CAPTURE_OverflowFlagReset
-                  0x004280                  _SCCP2_CAPTURE_Start
-                  0x004284                  _SCCP2_CAPTURE_Stop
-                  0x0016d6                  _SCCP3_CAPTURE_CallBack
-                  0x0042d8                  _SCCP3_CAPTURE_Data16Read
-                  0x0042dc                  _SCCP3_CAPTURE_HasBufferOverflowed
-                  0x0042a2                  _SCCP3_CAPTURE_Initialize
-                  0x0042e2                  _SCCP3_CAPTURE_IsBufferEmpty
-                  0x0042ea                  _SCCP3_CAPTURE_OverflowFlagReset
-                  0x0042cc                  _SCCP3_CAPTURE_Start
-                  0x0042d0                  _SCCP3_CAPTURE_Stop
-                  0x003e30                  _SPI1_Exchange
-                  0x003ebc                  _SPI1_Exchange16bit
-                  0x003ed2                  _SPI1_Exchange16bitBuffer
-                  0x003e46                  _SPI1_ExchangeBuffer
-                  0x003e02                  _SPI1_Initialize
-                  0x003ed6                  _SPI1_StatusGet
-                  0x004302                  _SYSTEM_Initialize
-                  0x004184                  _TMR1_Counter16BitGet
-                  0x00417c                  _TMR1_Counter16BitSet
-                  0x004194                  _TMR1_GetElapsedThenClear
-                  0x00414e                  _TMR1_Initialize
-                  0x004178                  _TMR1_Period16BitGet
-                  0x004170                  _TMR1_Period16BitSet
-                  0x0041a8                  _TMR1_SoftwareCounterClear
-                  0x0041a2                  _TMR1_SoftwareCounterGet
-                  0x004188                  _TMR1_Start
-                  0x004190                  _TMR1_Stop
-                  0x00415e                  _TMR1_Tasks_16BitOperation
+                  0x004246                  _DELAY_microseconds
+                  0x00422a                  _DELAY_milliseconds
+                  0x0037b8                  _DMA_ChannelDisable
+                  0x003798                  _DMA_ChannelEnable
+                  0x00385c                  _DMA_DestinationAddressSet
+                  0x00387c                  _DMA_Initialize
+                  0x003934                  _DMA_IsBufferedWriteComplete
+                  0x003960                  _DMA_IsHighAddressLimitFlagSet
+                  0x00398c                  _DMA_IsLowAddressLimitFlagSet
+                  0x0039b8                  _DMA_IsOperationDone
+                  0x003a10                  _DMA_IsOperationHalfComplete
+                  0x0039e4                  _DMA_IsOverrunFlagSet
+                  0x003908                  _DMA_IsSoftwareRequestPending
+                  0x00381c                  _DMA_SoftwareTriggerEnable
+                  0x00383c                  _DMA_SourceAddressSet
+                  0x0037f8                  _DMA_TransferCountGet
+                  0x0037d8                  _DMA_TransferCountSet
+                  0x003782                  _DMA__Channel2_Tasks
+                  0x00378e                  _DMA__Channel3_Tasks
+                  0x001762                  _Delay
+                  0x0029e0                  _FloatToInt16
+                  0x003d8c                  _I2C1_ErrorCountGet
+                  0x003d6c                  _I2C1_Initialize
+                  0x003e1c                  _I2C1_MasterQueueIsEmpty
+                  0x003e22                  _I2C1_MasterQueueIsFull
+                  0x003dd0                  _I2C1_MasterRead
+                  0x003dc4                  _I2C1_MasterReadTRBBuild
+                  0x003d90                  _I2C1_MasterTRBInsert
+                  0x003dfa                  _I2C1_MasterWrite
+                  0x003df2                  _I2C1_MasterWriteTRBBuild
+                  0x00353c                  _I2C1_read_bytes
+                  0x00359e                  _I2C1_read_bytes2
+                  0x0034ba                  _I2C1_write_bytes
+                  0x0041d4                  _INTERRUPT_Initialize
+                  0x001a64                  _LowPassFilterF
+                  0x0018b6                  _PIDControllerF
+                  0x00401e                  _PIN_MANAGER_Initialize
+                  0x003c00                  _PWM_EventA_Tasks
+                  0x003c0c                  _PWM_EventB_Tasks
+                  0x003c18                  _PWM_EventC_Tasks
+                  0x003c24                  _PWM_EventD_Tasks
+                  0x003c30                  _PWM_EventE_Tasks
+                  0x003c3c                  _PWM_EventF_Tasks
+                  0x003bb8                  _PWM_Generator1_Tasks
+                  0x003bc4                  _PWM_Generator2_Tasks
+                  0x003bd0                  _PWM_Generator3_Tasks
+                  0x003bdc                  _PWM_Generator4_Tasks
+                  0x003be8                  _PWM_Generator5_Tasks
+                  0x003bf4                  _PWM_Generator6_Tasks
+                  0x003a3c                  _PWM_Initialize
+                  0x00401a                  _RESET_CauseClearAll
+                  0x003fc4                  _RESET_GetCause
+                  0x003f76                  _SCCP1_TMR_Counter32BitGet
+                  0x003f6c                  _SCCP1_TMR_Counter32BitSet
+                  0x003f00                  _SCCP1_TMR_Initialize
+                  0x003f5a                  _SCCP1_TMR_Period32BitGet
+                  0x003f50                  _SCCP1_TMR_Period32BitSet
+                  0x003f28                  _SCCP1_TMR_Start
+                  0x003f3a                  _SCCP1_TMR_Stop
+                  0x003f88                  _SCCP1_TMR_Timer32ElapsedThenClear
+                  0x003f40                  _SCCP1_TMR_Timer32Tasks
+                  0x001722                  _SCCP2_CAPTURE_CallBack
+                  0x0042b2                  _SCCP2_CAPTURE_Data16Read
+                  0x0042b6                  _SCCP2_CAPTURE_HasBufferOverflowed
+                  0x00427c                  _SCCP2_CAPTURE_Initialize
+                  0x0042bc                  _SCCP2_CAPTURE_IsBufferEmpty
+                  0x0042c4                  _SCCP2_CAPTURE_OverflowFlagReset
+                  0x0042a6                  _SCCP2_CAPTURE_Start
+                  0x0042aa                  _SCCP2_CAPTURE_Stop
+                  0x0016e2                  _SCCP3_CAPTURE_CallBack
+                  0x0042fe                  _SCCP3_CAPTURE_Data16Read
+                  0x004302                  _SCCP3_CAPTURE_HasBufferOverflowed
+                  0x0042c8                  _SCCP3_CAPTURE_Initialize
+                  0x004308                  _SCCP3_CAPTURE_IsBufferEmpty
+                  0x004310                  _SCCP3_CAPTURE_OverflowFlagReset
+                  0x0042f2                  _SCCP3_CAPTURE_Start
+                  0x0042f6                  _SCCP3_CAPTURE_Stop
+                  0x003e56                  _SPI1_Exchange
+                  0x003ee2                  _SPI1_Exchange16bit
+                  0x003ef8                  _SPI1_Exchange16bitBuffer
+                  0x003e6c                  _SPI1_ExchangeBuffer
+                  0x003e28                  _SPI1_Initialize
+                  0x003efc                  _SPI1_StatusGet
+                  0x004328                  _SYSTEM_Initialize
+                  0x0041aa                  _TMR1_Counter16BitGet
+                  0x0041a2                  _TMR1_Counter16BitSet
+                  0x0041ba                  _TMR1_GetElapsedThenClear
+                  0x004174                  _TMR1_Initialize
+                  0x00419e                  _TMR1_Period16BitGet
+                  0x004196                  _TMR1_Period16BitSet
+                  0x0041ce                  _TMR1_SoftwareCounterClear
+                  0x0041c8                  _TMR1_SoftwareCounterGet
+                  0x0041ae                  _TMR1_Start
+                  0x0041b6                  _TMR1_Stop
+                  0x004184                  _TMR1_Tasks_16BitOperation
                   0x00034c                  __AddressError
                   0x0005c4                  __CCP2Interrupt
                   0x000600                  __CCP3Interrupt
@@ -615,7 +616,7 @@ External Symbols in Program Memory (by name):
                   0x00032e                  __StackError
                   0x000826                  ___addsf3
                   0x000826                  ___addsf3x
-                  0x004320                  ___delay32
+                  0x004346                  ___delay32
                   0x0009f0                  ___divsf3
                   0x0009f0                  ___divsf3x
                   0x000692                  ___eqsf2
@@ -641,69 +642,70 @@ External Symbols in Program Memory (by name):
                   0x000248                  __data_init
                   0x000248                  __data_init_extended
                   0x000cba                  __dnrmpackf
-                  0x001b38                  __electricalAngle
+                  0x001b44                  __electricalAngle
                   0x000ebe                  __fcompare
                   0x00077e                  __fpack
                   0x0007ca                  __funpack
                   0x000f14                  __funpack2
                   0x0016ca                  __micros
-                  0x001b10                  __normalizeAngle
+                  0x0016d6                  __milisec
+                  0x001b1c                  __normalizeAngle
                   0x000da0                  __propnanf
                   0x00023c                  __psv_init
                   0x000200                  __resetPRI
                   0x000b82                  __sdivf
-                  0x00175a                  __sin
+                  0x001766                  __sin
                   0x000db2                  __spackf
-                  0x00189a                  __sqrtApprox
+                  0x0018a6                  __sqrtApprox
                   0x000d6c                  __typef
                   0x000d0e                  __unpackdnrmf
                   0x000e58                  __unpackf
-                  0x0022a2                  _alignSensor
-                  0x002034                  _angleOpenloop
+                  0x0022ae                  _alignSensor
+                  0x002040                  _angleOpenloop
                   0x000f26                  _atan2f
                   0x0010a6                  _atanf
-                  0x00223c                  _electricalAngle
-                  0x001c74                  _encoderUpdate
-                  0x001b4a                  _encoder_getAngle
-                  0x001c4e                  _encoder_getLastAngle
-                  0x001b70                  _encoder_getVelocity
-                  0x0021c4                  _encoder_init
+                  0x002248                  _electricalAngle
+                  0x001c80                  _encoderUpdate
+                  0x001b56                  _encoder_getAngle
+                  0x001c5a                  _encoder_getLastAngle
+                  0x001b7c                  _encoder_getVelocity
+                  0x0021d0                  _encoder_init
                   0x001252                  _fabsf
                   0x00125c                  _floorf
                   0x0012da                  _fmodf
-                  0x0029b6                  _getFloat
-                  0x002226                  _getMechanicalAngle
-                  0x002484                  _initFOC
-                  0x0025dc                  _loopFOC
-                  0x003242                  _lsm6ds3tr_c_block_data_update_set
-                  0x0032a6                  _lsm6ds3tr_c_device_id_get
-                  0x0032fa                  _lsm6ds3tr_c_fifo_mode_set
-                  0x0033f6                  _lsm6ds3tr_c_gy_band_pass_set
-                  0x003212                  _lsm6ds3tr_c_gy_data_rate_set
-                  0x0031de                  _lsm6ds3tr_c_gy_full_scale_set
-                  0x003276                  _lsm6ds3tr_c_gy_power_mode_set
-                  0x003166                  _lsm6ds3tr_c_read_reg
-                  0x0032e2                  _lsm6ds3tr_c_reset_get
-                  0x0032b0                  _lsm6ds3tr_c_reset_set
-                  0x003170                  _lsm6ds3tr_c_write_reg
-                  0x0031ae                  _lsm6ds3tr_c_xl_data_rate_set
-                  0x00332c                  _lsm6ds3tr_c_xl_filter_analog_set
-                  0x00317a                  _lsm6ds3tr_c_xl_full_scale_set
-                  0x00335c                  _lsm6ds3tr_c_xl_lp1_bandwidth_set
-                  0x0033b4                  _lsm6ds3tr_c_xl_lp2_bandwidth_set
-                  0x003630                  _lsm6ds3tr_i2c_check
-                  0x0035ac                  _lsm6ds3tr_i2c_init
-                  0x002fa2                  _main
+                  0x0029e6                  _getFloat
+                  0x002232                  _getMechanicalAngle
+                  0x002490                  _initFOC
+                  0x0025e8                  _loopFOC
+                  0x003268                  _lsm6ds3tr_c_block_data_update_set
+                  0x0032cc                  _lsm6ds3tr_c_device_id_get
+                  0x003320                  _lsm6ds3tr_c_fifo_mode_set
+                  0x00341c                  _lsm6ds3tr_c_gy_band_pass_set
+                  0x003238                  _lsm6ds3tr_c_gy_data_rate_set
+                  0x003204                  _lsm6ds3tr_c_gy_full_scale_set
+                  0x00329c                  _lsm6ds3tr_c_gy_power_mode_set
+                  0x00318c                  _lsm6ds3tr_c_read_reg
+                  0x003308                  _lsm6ds3tr_c_reset_get
+                  0x0032d6                  _lsm6ds3tr_c_reset_set
+                  0x003196                  _lsm6ds3tr_c_write_reg
+                  0x0031d4                  _lsm6ds3tr_c_xl_data_rate_set
+                  0x003352                  _lsm6ds3tr_c_xl_filter_analog_set
+                  0x0031a0                  _lsm6ds3tr_c_xl_full_scale_set
+                  0x003382                  _lsm6ds3tr_c_xl_lp1_bandwidth_set
+                  0x0033da                  _lsm6ds3tr_c_xl_lp2_bandwidth_set
+                  0x003656                  _lsm6ds3tr_i2c_check
+                  0x0035d2                  _lsm6ds3tr_i2c_init
+                  0x002fc8                  _main
                   0x001422                  _memset
-                  0x002910                  _motorsInit
-                  0x00261a                  _move
-                  0x001d78                  _setPhaseVoltage
-                  0x001d24                  _shaftAngle
-                  0x0024d4                  _shaftVelocity
+                  0x002940                  _motorsInit
+                  0x002626                  _move
+                  0x001d84                  _setPhaseVoltage
+                  0x001d30                  _shaftAngle
+                  0x0024e0                  _shaftVelocity
                   0x0014f6                  _sine_array
-                  0x002516                  _velocityOpenloop
-                  0x00356a                  build/default/production/LSM6DS3TR.o:_platform_read
-                  0x003508                  build/default/production/LSM6DS3TR.o:_platform_write
+                  0x002522                  _velocityOpenloop
+                  0x003590                  build/default/production/LSM6DS3TR.o:_platform_read
+                  0x00352e                  build/default/production/LSM6DS3TR.o:_platform_write
 
 Memory Configuration
 
@@ -4649,29 +4651,29 @@ __c30_signature
  .nbss              0x1052          0x2 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(errno.CH_o)
                     0x1052                  _errno
 
-.bss                0x1054        0x304
- .bss               0x1054        0x260 build/default/production/main.o
+.bss                0x1054        0x30c
+ .bss               0x1054        0x268 build/default/production/main.o
                     0x1054                  _i2cBufferTX
                     0x105c                  _i2cBufferRX
                     0x1064                  _encoder
                     0x1150                  _I2C_Buffer
- .bss               0x12b4         0x44 build/default/production/LSM6DS3TR.o
-                    0x12b4                  _data_raw_acceleration
-                    0x12ba                  _data_raw_angular_rate
-                    0x12c0                  _new_data_raw_acceleration
-                    0x12c6                  _new_data_raw_angular_rate
- .bss               0x12f8         0x40 build/default/production/mcc_generated_files/dma.o
-                    0x12f8                  _DMA_TxBuffer
-                    0x1318                  _DMA_RxBuffer
- .bss               0x1338         0x20 build/default/production/mcc_generated_files/traps.o
+ .bss               0x12bc         0x44 build/default/production/LSM6DS3TR.o
+                    0x12bc                  _data_raw_acceleration
+                    0x12c2                  _data_raw_angular_rate
+                    0x12c8                  _new_data_raw_acceleration
+                    0x12ce                  _new_data_raw_angular_rate
+ .bss               0x1300         0x40 build/default/production/mcc_generated_files/dma.o
+                    0x1300                  _DMA_TxBuffer
+                    0x1320                  _DMA_RxBuffer
+ .bss               0x1340         0x20 build/default/production/mcc_generated_files/traps.o
 
-.data               0x1358         0x20
- .data              0x1358         0x20 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libm-elf.a(atanf.CH_o)
+.data               0x1360         0x20
+ .data              0x1360         0x20 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libm-elf.a(atanf.CH_o)
 
-.bss                0x1378         0x1e
- .bss               0x1378         0x18 build/default/production/mcc_generated_files/i2c1.o
- .bss               0x1390          0x4 build/default/production/mcc_generated_files/sccp1_tmr.o
- .bss               0x1394          0x2 build/default/production/mcc_generated_files/tmr1.o
+.bss                0x1380         0x1e
+ .bss               0x1380         0x18 build/default/production/mcc_generated_files/i2c1.o
+ .bss               0x1398          0x4 build/default/production/mcc_generated_files/sccp1_tmr.o
+ .bss               0x139c          0x2 build/default/production/mcc_generated_files/tmr1.o
 
 .ivt._OscillatorFail
                   0x000004          0x2
@@ -4821,210 +4823,211 @@ __c30_signature
  .const             0x9686          0x2 build/default/production/LSM6DS3TR.o
                     0x9686                  _CTRL_REG1_ADDRESS
 
-.text             0x001688       0x29ee
- .text            0x001688       0x1ade build/default/production/main.o
+.text             0x001688       0x2a14
+ .text            0x001688       0x1b04 build/default/production/main.o
                   0x0016ca                  __micros
-                  0x0016d6                  _SCCP3_CAPTURE_CallBack
-                  0x001716                  _SCCP2_CAPTURE_CallBack
-                  0x001756                  _Delay
-                  0x00175a                  __sin
-                  0x00189a                  __sqrtApprox
-                  0x0018aa                  _PIDControllerF
-                  0x001a58                  _LowPassFilterF
-                  0x001b10                  __normalizeAngle
-                  0x001b38                  __electricalAngle
-                  0x001b4a                  _encoder_getAngle
-                  0x001b70                  _encoder_getVelocity
-                  0x001c4e                  _encoder_getLastAngle
-                  0x001c74                  _encoderUpdate
-                  0x001d24                  _shaftAngle
-                  0x001d78                  _setPhaseVoltage
-                  0x002034                  _angleOpenloop
-                  0x0021c4                  _encoder_init
-                  0x002226                  _getMechanicalAngle
-                  0x00223c                  _electricalAngle
-                  0x0022a2                  _alignSensor
-                  0x002484                  _initFOC
-                  0x0024d4                  _shaftVelocity
-                  0x002516                  _velocityOpenloop
-                  0x0025dc                  _loopFOC
-                  0x00261a                  _move
-                  0x002910                  _motorsInit
-                  0x0029b0                  _FloatToInt16
-                  0x0029b6                  _getFloat
-                  0x0029d4                  _DMA_Channel0_CallBack
-                  0x002fa2                  _main
- .text            0x003166        0x32e build/default/production/lsm6ds3tr-c_reg.o
-                  0x003166                  _lsm6ds3tr_c_read_reg
-                  0x003170                  _lsm6ds3tr_c_write_reg
-                  0x00317a                  _lsm6ds3tr_c_xl_full_scale_set
-                  0x0031ae                  _lsm6ds3tr_c_xl_data_rate_set
-                  0x0031de                  _lsm6ds3tr_c_gy_full_scale_set
-                  0x003212                  _lsm6ds3tr_c_gy_data_rate_set
-                  0x003242                  _lsm6ds3tr_c_block_data_update_set
-                  0x003276                  _lsm6ds3tr_c_gy_power_mode_set
-                  0x0032a6                  _lsm6ds3tr_c_device_id_get
-                  0x0032b0                  _lsm6ds3tr_c_reset_set
-                  0x0032e2                  _lsm6ds3tr_c_reset_get
-                  0x0032fa                  _lsm6ds3tr_c_fifo_mode_set
-                  0x00332c                  _lsm6ds3tr_c_xl_filter_analog_set
-                  0x00335c                  _lsm6ds3tr_c_xl_lp1_bandwidth_set
-                  0x0033b4                  _lsm6ds3tr_c_xl_lp2_bandwidth_set
-                  0x0033f6                  _lsm6ds3tr_c_gy_band_pass_set
- .text            0x003494        0x2c4 build/default/production/LSM6DS3TR.o
-                  0x003494                  _I2C1_write_bytes
-                  0x003508                  build/default/production/LSM6DS3TR.o:_platform_write
-                  0x003516                  _I2C1_read_bytes
-                  0x00356a                  build/default/production/LSM6DS3TR.o:_platform_read
-                  0x003578                  _I2C1_read_bytes2
-                  0x0035ac                  _lsm6ds3tr_i2c_init
-                  0x003630                  _lsm6ds3tr_i2c_check
- .text            0x003758        0x2be build/default/production/mcc_generated_files/dma.o
-                  0x003758                  _DMA_Channel1_CallBack
-                  0x00375a                  _DMA_Channel2_CallBack
-                  0x00375c                  _DMA__Channel2_Tasks
-                  0x003766                  _DMA_Channel3_CallBack
-                  0x003768                  _DMA__Channel3_Tasks
-                  0x003772                  _DMA_ChannelEnable
-                  0x003792                  _DMA_ChannelDisable
-                  0x0037b2                  _DMA_TransferCountSet
-                  0x0037d2                  _DMA_TransferCountGet
-                  0x0037f6                  _DMA_SoftwareTriggerEnable
-                  0x003816                  _DMA_SourceAddressSet
-                  0x003836                  _DMA_DestinationAddressSet
-                  0x003856                  _DMA_Initialize
-                  0x0038e2                  _DMA_IsSoftwareRequestPending
-                  0x00390e                  _DMA_IsBufferedWriteComplete
-                  0x00393a                  _DMA_IsHighAddressLimitFlagSet
-                  0x003966                  _DMA_IsLowAddressLimitFlagSet
-                  0x003992                  _DMA_IsOperationDone
-                  0x0039be                  _DMA_IsOverrunFlagSet
-                  0x0039ea                  _DMA_IsOperationHalfComplete
- .text            0x003a16        0x20a build/default/production/mcc_generated_files/pwm.o
-                  0x003a16                  _PWM_Initialize
-                  0x003b90                  _PWM_Generator1_CallBack
-                  0x003b92                  _PWM_Generator1_Tasks
-                  0x003b9c                  _PWM_Generator2_CallBack
-                  0x003b9e                  _PWM_Generator2_Tasks
-                  0x003ba8                  _PWM_Generator3_CallBack
-                  0x003baa                  _PWM_Generator3_Tasks
-                  0x003bb4                  _PWM_Generator4_CallBack
-                  0x003bb6                  _PWM_Generator4_Tasks
-                  0x003bc0                  _PWM_Generator5_CallBack
-                  0x003bc2                  _PWM_Generator5_Tasks
-                  0x003bcc                  _PWM_Generator6_CallBack
-                  0x003bce                  _PWM_Generator6_Tasks
-                  0x003bd8                  _PWM_EventA_CallBack
-                  0x003bda                  _PWM_EventA_Tasks
-                  0x003be4                  _PWM_EventB_CallBack
-                  0x003be6                  _PWM_EventB_Tasks
-                  0x003bf0                  _PWM_EventC_CallBack
-                  0x003bf2                  _PWM_EventC_Tasks
-                  0x003bfc                  _PWM_EventD_CallBack
-                  0x003bfe                  _PWM_EventD_Tasks
-                  0x003c08                  _PWM_EventE_CallBack
-                  0x003c0a                  _PWM_EventE_Tasks
-                  0x003c14                  _PWM_EventF_CallBack
-                  0x003c16                  _PWM_EventF_Tasks
- .text            0x003c20        0x100 build/default/production/mcc_generated_files/adc1.o
-                  0x003c20                  _ADC1_CallBack
-                  0x003c22                  _ADC1_channel_AN4_CallBack
-                  0x003c24                  _ADC1_channel_AN24_CallBack
-                  0x003c26                  _ADC1_channel_AN25_CallBack
-                  0x003c28                  _ADC1_Core0PowerEnable
-                  0x003c36                  _ADC1_Core1PowerEnable
-                  0x003c44                  _ADC1_SharedCorePowerEnable
-                  0x003c52                  _ADC1_SetCommonInterruptHandler
-                  0x003c56                  _ADC1_Tasks
-                  0x003c66                  _ADC1_Setchannel_AN4InterruptHandler
-                  0x003c6a                  _ADC1_channel_AN4_Tasks
-                  0x003c7a                  _ADC1_Setchannel_AN24InterruptHandler
-                  0x003c7e                  _ADC1_Setchannel_AN25InterruptHandler
-                  0x003c82                  _ADC1_Initialize
- .text            0x003d20         0xe2 build/default/production/mcc_generated_files/i2c1.o
-                  0x003d46                  _I2C1_Initialize
-                  0x003d66                  _I2C1_ErrorCountGet
-                  0x003d6a                  _I2C1_MasterTRBInsert
-                  0x003d9e                  _I2C1_MasterReadTRBBuild
-                  0x003daa                  _I2C1_MasterRead
-                  0x003dcc                  _I2C1_MasterWriteTRBBuild
-                  0x003dd4                  _I2C1_MasterWrite
-                  0x003df6                  _I2C1_MasterQueueIsEmpty
-                  0x003dfc                  _I2C1_MasterQueueIsFull
- .text            0x003e02         0xd8 build/default/production/mcc_generated_files/spi1.o
-                  0x003e02                  _SPI1_Initialize
-                  0x003e30                  _SPI1_Exchange
-                  0x003e46                  _SPI1_ExchangeBuffer
-                  0x003ebc                  _SPI1_Exchange16bit
-                  0x003ed2                  _SPI1_Exchange16bitBuffer
-                  0x003ed6                  _SPI1_StatusGet
- .text            0x003eda         0x96 build/default/production/mcc_generated_files/sccp1_tmr.o
-                  0x003eda                  _SCCP1_TMR_Initialize
-                  0x003f02                  _SCCP1_TMR_Start
-                  0x003f14                  _SCCP1_TMR_Stop
-                  0x003f18                  _SCCP1_TMR_Timer32CallBack
-                  0x003f1a                  _SCCP1_TMR_Timer32Tasks
-                  0x003f2a                  _SCCP1_TMR_Period32BitSet
-                  0x003f34                  _SCCP1_TMR_Period32BitGet
-                  0x003f46                  _SCCP1_TMR_Counter32BitSet
-                  0x003f50                  _SCCP1_TMR_Counter32BitGet
-                  0x003f62                  _SCCP1_TMR_Timer32ElapsedThenClear
- .text            0x003f70         0x88 build/default/production/mcc_generated_files/reset.o
-                  0x003f9e                  _RESET_GetCause
-                  0x003fa2                  _RESET_CauseHandler
-                  0x003ff4                  _RESET_CauseClearAll
- .text            0x003ff8         0x7e build/default/production/mcc_generated_files/pin_manager.o
-                  0x003ff8                  _PIN_MANAGER_Initialize
+                  0x0016d6                  __milisec
+                  0x0016e2                  _SCCP3_CAPTURE_CallBack
+                  0x001722                  _SCCP2_CAPTURE_CallBack
+                  0x001762                  _Delay
+                  0x001766                  __sin
+                  0x0018a6                  __sqrtApprox
+                  0x0018b6                  _PIDControllerF
+                  0x001a64                  _LowPassFilterF
+                  0x001b1c                  __normalizeAngle
+                  0x001b44                  __electricalAngle
+                  0x001b56                  _encoder_getAngle
+                  0x001b7c                  _encoder_getVelocity
+                  0x001c5a                  _encoder_getLastAngle
+                  0x001c80                  _encoderUpdate
+                  0x001d30                  _shaftAngle
+                  0x001d84                  _setPhaseVoltage
+                  0x002040                  _angleOpenloop
+                  0x0021d0                  _encoder_init
+                  0x002232                  _getMechanicalAngle
+                  0x002248                  _electricalAngle
+                  0x0022ae                  _alignSensor
+                  0x002490                  _initFOC
+                  0x0024e0                  _shaftVelocity
+                  0x002522                  _velocityOpenloop
+                  0x0025e8                  _loopFOC
+                  0x002626                  _move
+                  0x002940                  _motorsInit
+                  0x0029e0                  _FloatToInt16
+                  0x0029e6                  _getFloat
+                  0x002a04                  _DMA_Channel0_CallBack
+                  0x002fc8                  _main
+ .text            0x00318c        0x32e build/default/production/lsm6ds3tr-c_reg.o
+                  0x00318c                  _lsm6ds3tr_c_read_reg
+                  0x003196                  _lsm6ds3tr_c_write_reg
+                  0x0031a0                  _lsm6ds3tr_c_xl_full_scale_set
+                  0x0031d4                  _lsm6ds3tr_c_xl_data_rate_set
+                  0x003204                  _lsm6ds3tr_c_gy_full_scale_set
+                  0x003238                  _lsm6ds3tr_c_gy_data_rate_set
+                  0x003268                  _lsm6ds3tr_c_block_data_update_set
+                  0x00329c                  _lsm6ds3tr_c_gy_power_mode_set
+                  0x0032cc                  _lsm6ds3tr_c_device_id_get
+                  0x0032d6                  _lsm6ds3tr_c_reset_set
+                  0x003308                  _lsm6ds3tr_c_reset_get
+                  0x003320                  _lsm6ds3tr_c_fifo_mode_set
+                  0x003352                  _lsm6ds3tr_c_xl_filter_analog_set
+                  0x003382                  _lsm6ds3tr_c_xl_lp1_bandwidth_set
+                  0x0033da                  _lsm6ds3tr_c_xl_lp2_bandwidth_set
+                  0x00341c                  _lsm6ds3tr_c_gy_band_pass_set
+ .text            0x0034ba        0x2c4 build/default/production/LSM6DS3TR.o
+                  0x0034ba                  _I2C1_write_bytes
+                  0x00352e                  build/default/production/LSM6DS3TR.o:_platform_write
+                  0x00353c                  _I2C1_read_bytes
+                  0x003590                  build/default/production/LSM6DS3TR.o:_platform_read
+                  0x00359e                  _I2C1_read_bytes2
+                  0x0035d2                  _lsm6ds3tr_i2c_init
+                  0x003656                  _lsm6ds3tr_i2c_check
+ .text            0x00377e        0x2be build/default/production/mcc_generated_files/dma.o
+                  0x00377e                  _DMA_Channel1_CallBack
+                  0x003780                  _DMA_Channel2_CallBack
+                  0x003782                  _DMA__Channel2_Tasks
+                  0x00378c                  _DMA_Channel3_CallBack
+                  0x00378e                  _DMA__Channel3_Tasks
+                  0x003798                  _DMA_ChannelEnable
+                  0x0037b8                  _DMA_ChannelDisable
+                  0x0037d8                  _DMA_TransferCountSet
+                  0x0037f8                  _DMA_TransferCountGet
+                  0x00381c                  _DMA_SoftwareTriggerEnable
+                  0x00383c                  _DMA_SourceAddressSet
+                  0x00385c                  _DMA_DestinationAddressSet
+                  0x00387c                  _DMA_Initialize
+                  0x003908                  _DMA_IsSoftwareRequestPending
+                  0x003934                  _DMA_IsBufferedWriteComplete
+                  0x003960                  _DMA_IsHighAddressLimitFlagSet
+                  0x00398c                  _DMA_IsLowAddressLimitFlagSet
+                  0x0039b8                  _DMA_IsOperationDone
+                  0x0039e4                  _DMA_IsOverrunFlagSet
+                  0x003a10                  _DMA_IsOperationHalfComplete
+ .text            0x003a3c        0x20a build/default/production/mcc_generated_files/pwm.o
+                  0x003a3c                  _PWM_Initialize
+                  0x003bb6                  _PWM_Generator1_CallBack
+                  0x003bb8                  _PWM_Generator1_Tasks
+                  0x003bc2                  _PWM_Generator2_CallBack
+                  0x003bc4                  _PWM_Generator2_Tasks
+                  0x003bce                  _PWM_Generator3_CallBack
+                  0x003bd0                  _PWM_Generator3_Tasks
+                  0x003bda                  _PWM_Generator4_CallBack
+                  0x003bdc                  _PWM_Generator4_Tasks
+                  0x003be6                  _PWM_Generator5_CallBack
+                  0x003be8                  _PWM_Generator5_Tasks
+                  0x003bf2                  _PWM_Generator6_CallBack
+                  0x003bf4                  _PWM_Generator6_Tasks
+                  0x003bfe                  _PWM_EventA_CallBack
+                  0x003c00                  _PWM_EventA_Tasks
+                  0x003c0a                  _PWM_EventB_CallBack
+                  0x003c0c                  _PWM_EventB_Tasks
+                  0x003c16                  _PWM_EventC_CallBack
+                  0x003c18                  _PWM_EventC_Tasks
+                  0x003c22                  _PWM_EventD_CallBack
+                  0x003c24                  _PWM_EventD_Tasks
+                  0x003c2e                  _PWM_EventE_CallBack
+                  0x003c30                  _PWM_EventE_Tasks
+                  0x003c3a                  _PWM_EventF_CallBack
+                  0x003c3c                  _PWM_EventF_Tasks
+ .text            0x003c46        0x100 build/default/production/mcc_generated_files/adc1.o
+                  0x003c46                  _ADC1_CallBack
+                  0x003c48                  _ADC1_channel_AN4_CallBack
+                  0x003c4a                  _ADC1_channel_AN24_CallBack
+                  0x003c4c                  _ADC1_channel_AN25_CallBack
+                  0x003c4e                  _ADC1_Core0PowerEnable
+                  0x003c5c                  _ADC1_Core1PowerEnable
+                  0x003c6a                  _ADC1_SharedCorePowerEnable
+                  0x003c78                  _ADC1_SetCommonInterruptHandler
+                  0x003c7c                  _ADC1_Tasks
+                  0x003c8c                  _ADC1_Setchannel_AN4InterruptHandler
+                  0x003c90                  _ADC1_channel_AN4_Tasks
+                  0x003ca0                  _ADC1_Setchannel_AN24InterruptHandler
+                  0x003ca4                  _ADC1_Setchannel_AN25InterruptHandler
+                  0x003ca8                  _ADC1_Initialize
+ .text            0x003d46         0xe2 build/default/production/mcc_generated_files/i2c1.o
+                  0x003d6c                  _I2C1_Initialize
+                  0x003d8c                  _I2C1_ErrorCountGet
+                  0x003d90                  _I2C1_MasterTRBInsert
+                  0x003dc4                  _I2C1_MasterReadTRBBuild
+                  0x003dd0                  _I2C1_MasterRead
+                  0x003df2                  _I2C1_MasterWriteTRBBuild
+                  0x003dfa                  _I2C1_MasterWrite
+                  0x003e1c                  _I2C1_MasterQueueIsEmpty
+                  0x003e22                  _I2C1_MasterQueueIsFull
+ .text            0x003e28         0xd8 build/default/production/mcc_generated_files/spi1.o
+                  0x003e28                  _SPI1_Initialize
+                  0x003e56                  _SPI1_Exchange
+                  0x003e6c                  _SPI1_ExchangeBuffer
+                  0x003ee2                  _SPI1_Exchange16bit
+                  0x003ef8                  _SPI1_Exchange16bitBuffer
+                  0x003efc                  _SPI1_StatusGet
+ .text            0x003f00         0x96 build/default/production/mcc_generated_files/sccp1_tmr.o
+                  0x003f00                  _SCCP1_TMR_Initialize
+                  0x003f28                  _SCCP1_TMR_Start
+                  0x003f3a                  _SCCP1_TMR_Stop
+                  0x003f3e                  _SCCP1_TMR_Timer32CallBack
+                  0x003f40                  _SCCP1_TMR_Timer32Tasks
+                  0x003f50                  _SCCP1_TMR_Period32BitSet
+                  0x003f5a                  _SCCP1_TMR_Period32BitGet
+                  0x003f6c                  _SCCP1_TMR_Counter32BitSet
+                  0x003f76                  _SCCP1_TMR_Counter32BitGet
+                  0x003f88                  _SCCP1_TMR_Timer32ElapsedThenClear
+ .text            0x003f96         0x88 build/default/production/mcc_generated_files/reset.o
+                  0x003fc4                  _RESET_GetCause
+                  0x003fc8                  _RESET_CauseHandler
+                  0x00401a                  _RESET_CauseClearAll
+ .text            0x00401e         0x7e build/default/production/mcc_generated_files/pin_manager.o
+                  0x00401e                  _PIN_MANAGER_Initialize
 
-.dinit            0x004076         0x76
- .dinit           0x004076         0x76 data_init
+.dinit            0x00409c         0x76
+ .dinit           0x00409c         0x76 data_init
 
-.text             0x0040ec        0x234
- .text            0x0040ec         0x62 build/default/production/mcc_generated_files/clock.o
-                  0x0040ec                  _CLOCK_Initialize
-                  0x004148                  _CLOCK_AuxPllLockStatusGet
- .text            0x00414e         0x60 build/default/production/mcc_generated_files/tmr1.o
-                  0x00414e                  _TMR1_Initialize
-                  0x00415e                  _TMR1_Tasks_16BitOperation
-                  0x004170                  _TMR1_Period16BitSet
-                  0x004178                  _TMR1_Period16BitGet
-                  0x00417c                  _TMR1_Counter16BitSet
-                  0x004184                  _TMR1_Counter16BitGet
-                  0x004188                  _TMR1_Start
-                  0x004190                  _TMR1_Stop
-                  0x004194                  _TMR1_GetElapsedThenClear
-                  0x0041a2                  _TMR1_SoftwareCounterGet
-                  0x0041a8                  _TMR1_SoftwareCounterClear
- .text            0x0041ae         0x56 build/default/production/mcc_generated_files/interrupt_manager.o
-                  0x0041ae                  _INTERRUPT_Initialize
- .text            0x004204         0x52 build/default/production/mcc_generated_files/delay.o
-                  0x004204                  _DELAY_milliseconds
-                  0x004220                  _DELAY_microseconds
- .text            0x004256         0x4c build/default/production/mcc_generated_files/sccp2_capture.o
-                  0x004256                  _SCCP2_CAPTURE_Initialize
-                  0x004280                  _SCCP2_CAPTURE_Start
-                  0x004284                  _SCCP2_CAPTURE_Stop
-                  0x00428a                  _SCCP2_CAPTURE_TimerCallBack
-                  0x00428c                  _SCCP2_CAPTURE_Data16Read
-                  0x004290                  _SCCP2_CAPTURE_HasBufferOverflowed
-                  0x004296                  _SCCP2_CAPTURE_IsBufferEmpty
-                  0x00429e                  _SCCP2_CAPTURE_OverflowFlagReset
- .text            0x0042a2         0x4c build/default/production/mcc_generated_files/sccp3_capture.o
-                  0x0042a2                  _SCCP3_CAPTURE_Initialize
-                  0x0042cc                  _SCCP3_CAPTURE_Start
-                  0x0042d0                  _SCCP3_CAPTURE_Stop
-                  0x0042d6                  _SCCP3_CAPTURE_TimerCallBack
-                  0x0042d8                  _SCCP3_CAPTURE_Data16Read
-                  0x0042dc                  _SCCP3_CAPTURE_HasBufferOverflowed
-                  0x0042e2                  _SCCP3_CAPTURE_IsBufferEmpty
-                  0x0042ea                  _SCCP3_CAPTURE_OverflowFlagReset
- .text            0x0042ee         0x32 build/default/production/mcc_generated_files/system.o
-                  0x004302                  _SYSTEM_Initialize
+.text             0x004112        0x234
+ .text            0x004112         0x62 build/default/production/mcc_generated_files/clock.o
+                  0x004112                  _CLOCK_Initialize
+                  0x00416e                  _CLOCK_AuxPllLockStatusGet
+ .text            0x004174         0x60 build/default/production/mcc_generated_files/tmr1.o
+                  0x004174                  _TMR1_Initialize
+                  0x004184                  _TMR1_Tasks_16BitOperation
+                  0x004196                  _TMR1_Period16BitSet
+                  0x00419e                  _TMR1_Period16BitGet
+                  0x0041a2                  _TMR1_Counter16BitSet
+                  0x0041aa                  _TMR1_Counter16BitGet
+                  0x0041ae                  _TMR1_Start
+                  0x0041b6                  _TMR1_Stop
+                  0x0041ba                  _TMR1_GetElapsedThenClear
+                  0x0041c8                  _TMR1_SoftwareCounterGet
+                  0x0041ce                  _TMR1_SoftwareCounterClear
+ .text            0x0041d4         0x56 build/default/production/mcc_generated_files/interrupt_manager.o
+                  0x0041d4                  _INTERRUPT_Initialize
+ .text            0x00422a         0x52 build/default/production/mcc_generated_files/delay.o
+                  0x00422a                  _DELAY_milliseconds
+                  0x004246                  _DELAY_microseconds
+ .text            0x00427c         0x4c build/default/production/mcc_generated_files/sccp2_capture.o
+                  0x00427c                  _SCCP2_CAPTURE_Initialize
+                  0x0042a6                  _SCCP2_CAPTURE_Start
+                  0x0042aa                  _SCCP2_CAPTURE_Stop
+                  0x0042b0                  _SCCP2_CAPTURE_TimerCallBack
+                  0x0042b2                  _SCCP2_CAPTURE_Data16Read
+                  0x0042b6                  _SCCP2_CAPTURE_HasBufferOverflowed
+                  0x0042bc                  _SCCP2_CAPTURE_IsBufferEmpty
+                  0x0042c4                  _SCCP2_CAPTURE_OverflowFlagReset
+ .text            0x0042c8         0x4c build/default/production/mcc_generated_files/sccp3_capture.o
+                  0x0042c8                  _SCCP3_CAPTURE_Initialize
+                  0x0042f2                  _SCCP3_CAPTURE_Start
+                  0x0042f6                  _SCCP3_CAPTURE_Stop
+                  0x0042fc                  _SCCP3_CAPTURE_TimerCallBack
+                  0x0042fe                  _SCCP3_CAPTURE_Data16Read
+                  0x004302                  _SCCP3_CAPTURE_HasBufferOverflowed
+                  0x004308                  _SCCP3_CAPTURE_IsBufferEmpty
+                  0x004310                  _SCCP3_CAPTURE_OverflowFlagReset
+ .text            0x004314         0x32 build/default/production/mcc_generated_files/system.o
+                  0x004328                  _SYSTEM_Initialize
 
-.init.delay32     0x004320         0x1c
- .init.delay32    0x004320         0x1c c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(delay32ch.Meo)
-                  0x004320                  ___delay32
+.init.delay32     0x004346         0x1c
+ .init.delay32    0x004346         0x1c c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(delay32ch.Meo)
+                  0x004346                  ___delay32
 
-.text             0x00433c          0xe
- .text            0x00433c          0xe build/default/production/mcc_generated_files/traps.o
-                  0x004346                  _TRAPS_halt_on_error
+.text             0x004362          0xe
+ .text            0x004362          0xe build/default/production/mcc_generated_files/traps.o
+                  0x00436c                  _TRAPS_halt_on_error
